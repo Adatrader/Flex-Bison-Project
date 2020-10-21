@@ -14,7 +14,8 @@ digit           [0-9]
 identifier      {letter}({letter}|"_"|{digit})*
 
 /* Whitespaces (#3)*/
-whitespace      [ \t\n]+
+newline         [\n]
+whitespace      [ \t]+  
 
 /* Integer and Double (#4 & #5), Exponent and Hex*/
 

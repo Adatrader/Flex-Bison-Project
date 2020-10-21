@@ -25,6 +25,6 @@ class CS4110 {
 	flag = true;
 	Funny = 0X89aB; funny = 123456E+7;
 	s = "hello world";
-	while (x = (Funny / 10) < 0) println(s, “ have fun !”);
+	while (x = (Funny / 10) < 0) println(s, " have fun !");
 	a = newarray(20, int);
 }
