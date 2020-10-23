@@ -11,14 +11,14 @@ string          \"[^\n"]*\"
 /* Identifiers (#2) */
 letter          [a-zA-Z]
 digit           [0-9]
-identifier      {letter}({letter}|{digit}|"_")*
+identifier      {letter}({letter}|"_"|{digit})*
 
 /* Whitespaces (#3)*/
 whitespace      [ \t\n]+
 
 /* Integer and Double (#4 & #5), Exponent and Hex*/
 
-hex             (0x|0X)[0-9a-fA-F]+
+hex             0(X|x)[0-9a-fA-F]+
 exponent        ((e|E)("-"|"+")?({digit}+))
 intconstant     {hex}|{digit}+
 doubleconstant  {digit}+"."{digit}+{exponent}?|{digit}+{exponent}
