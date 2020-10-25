@@ -1,27 +1,26 @@
+int id leftparen int id rightparen leftbrace 
+if leftparen id greater intconstant rightparen return id multiplication id leftparen id minus intconstant rightparen semicolon 
+else return intconstant semicolon 
+rightbrace 
 
-int id leftparen int id rightparen leftbrace
-if leftparen id greater intconstant rightparen return id multiplication id leftparen id minus
-intconstant rightparen semicolon
-else return intconstant semicolon
-rightbrace
+void id leftparen rightparen leftbrace 
+int id semicolon 
+int id semicolon 
+println leftparen stringconstant comma id leftparen intconstant rightparen comma stringconstant rightparen semicolon 
+id assignop intconstant semicolon id assignop intconstant semicolon 
+for leftparen semicolon id lessequal intconstant semicolon rightparen leftbrace id assignop id multiplication id semicolon id assignop id plus intconstant semicolon rightbrace 
+println leftparen stringconstant comma id rightparen semicolon 
+rightbrace 
 
-void id leftparen rightparen leftbrace
-int id semicolon
-int id semicolon
-println leftparen ("factorial of 10 is " should be stringconstant->id id intconstant id) comma id leftparen intconstant rightparen comma ("from the resursive function" should be stringconstant->id id id id) rightparen semicolon
-id assignop intconstant semicolon id assignop intconstant semicolon
-for leftparen semicolon id lessequal intconstant semicolon rightparen leftbrace id assignop id multiplication id semicolon id assignop id plus intconstant semicolon rightbrace
-println leftparen (“iterative result of 10! is ” should be stringconstant -> id id id intconstant not id) comma id rightparen semicolon
-rightbrace
-
-class id leftbrace
-int id semicolon
-double id semicolon
-boolean id semicolon
-string id semicolon
-int leftbracket rightbracket id semicolon
-id assignop true semicolon
-id assignop intconstant semicolon id assignop doubleconstant semicolon
-id assignop ("" should be stringconstant->id id) semicolon
-while leftparen id assignop leftparen id division intconstant rightparen less intconstant rightparen println leftparen id comma (" have fun !" should be string constant-> id id not) rightparen semicolon
-id assignop newarray leftparen intconstant comma int rightparen semicolon rightbrace
+class id leftbrace 
+int id semicolon 
+double id semicolon 
+boolean id semicolon 
+string id semicolon 
+int leftbracket rightbracket id semicolon 
+id assignop true semicolon 
+id assignop intconstant semicolon id assignop doubleconstant semicolon 
+id assignop stringconstant semicolon 
+while leftparen id assignop leftparen id division intconstant rightparen less intconstant rightparen println leftparen id comma stringconstant rightparen semicolon 
+id assignop newarray leftparen intconstant comma int rightparen semicolon 
+rightbrace 
