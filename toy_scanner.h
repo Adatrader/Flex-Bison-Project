@@ -1,3 +1,7 @@
+/*Note that tokens must be represented as integers in your lexer, which will be passed as a parameter to the parser of
+your Project II. However, ordinal numbers are not readable. Therefore, your Project I ought to print the
+corresponding string names of those ordinal numbers for verification.*/
+
 /* Tokens */
 #define _boolean            01
 #define _break              02
