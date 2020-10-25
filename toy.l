@@ -6,7 +6,7 @@
 %}
 
 /* String (#6) */
-string          \“[^\n“”]*\”|\"[^\n"]*\"
+string          \"[^\n"]*\"
 
 /* Identifiers (#2) */
 letter          [a-zA-Z]
@@ -15,7 +15,7 @@ identifier      {letter}({letter}|"_"|{digit})*
 
 /* Whitespaces (#3)*/
 newline         [\n]
-whitespace      [ \t]+
+whitespace      [ \t]+  
 
 /* Integer and Double (#4 & #5), Exponent and Hex*/
 
