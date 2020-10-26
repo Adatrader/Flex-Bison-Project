@@ -5,6 +5,7 @@
 
 %}
 
+
 /* String (#6) */
 string          \“[^\n“”]*\”|\"[^\n"]*\"
 
@@ -25,36 +26,36 @@ intconstant     {hex}|{digit}+
 doubleconstant  {digit}+"."{digit}+{exponent}?|{digit}+{exponent}
 
  /* Comments (#9)*/
-comment         "//"((.)*)\n
-multicomment    "/*"(([^*]|(("*"+)[^*/]))*)("*"+)"/"\n
+comment         \/\/.*\n
+multicomment    \/\*[^*]*\*\/\n
 
 %%
 
   /* Keywords (#1)*/
 
-boolean     { printf("%s ", yytext); } /* return (_bool); */
-break       { printf("%s ", yytext); } /* return (_break); */
-class       { printf("%s ", yytext); } /* return (_class); */
-double      { printf("%s ", yytext); } /* return (_double); */
-else        { printf("%s ", yytext); } /* return (_else); */
-extends     { printf("%s ", yytext); } /* return (_extends); */
-false       { printf("%s ", yytext); } /* return (_booleanconstant); */
-for         { printf("%s ", yytext); } /* return (_for); */
-if          { printf("%s ", yytext); } /* return (_if); */
-implements  { printf("%s ", yytext); } /* return (_implements); */
-int         { printf("%s ", yytext); } /* return (_int); */
-interface   { printf("%s ", yytext); } /* return (_interface); */
-new         { printf("%s ", yytext); } /* return (_new); */
-newarray    { printf("%s ", yytext); } /* return (_newarray); */
-null        { printf("%s ", yytext); } /* return (_null); */
-println     { printf("%s ", yytext); } /* return (_println); */
-readln      { printf("%s ", yytext); } /* return (_readln); */
-return      { printf("%s ", yytext); } /* return (_return); */
-string      { printf("%s ", yytext); } /* return (_string); */
-this        { printf("%s ", yytext); } /* return (_this); */
-true        { printf("%s ", yytext); } /* return (_booleanconstant); */
-void        { printf("%s ", yytext); } /* return (_void); */
-while       { printf("%s ", yytext); } /* return (_while); */
+boolean     { printf("%s ", yytext); return(_boolean); }
+break       { printf("%s ", yytext); return(_break); }
+class       { printf("%s ", yytext); return (_class); }
+double      { printf("%s ", yytext); return (_double); }
+else        { printf("%s ", yytext); return (_else); }
+extends     { printf("%s ", yytext); return (_extends); }
+false       { printf("%s ", yytext); return (_booleanconstant); }
+for         { printf("%s ", yytext); return (_for); }
+if          { printf("%s ", yytext); return (_if); }
+implements  { printf("%s ", yytext); return (_implements); }
+int         { printf("%s ", yytext); return (_int); }
+interface   { printf("%s ", yytext); return (_interface); }
+new         { printf("%s ", yytext); return (_new); }
+newarray    { printf("%s ", yytext); return (_newarray); }
+null        { printf("%s ", yytext); return (_null); }
+println     { printf("%s ", yytext); return (_println); }
+readln      { printf("%s ", yytext); return (_readln); }
+return      { printf("%s ", yytext); return (_return); }
+string      { printf("%s ", yytext); return (_string); }
+this        { printf("%s ", yytext); return (_this); }
+true        { printf("%s ", yytext); return (_booleanconstant); }
+void        { printf("%s ", yytext); return (_void); }
+while       { printf("%s ", yytext); return (_while); }
 
 {intconstant}     { printf("intconstant "); return(_intconstant); }
 {doubleconstant}  { printf("doubleconstant "); return(_doubleconstant); }
@@ -100,11 +101,90 @@ while       { printf("%s ", yytext); } /* return (_while); */
 
 /* C Functions */
 
-int main(void) {
-  while(yylex()) {}
-  return 0;
+
+/* Helper Methods */
+
+//getNextSymbol();
+
+//Create();
+
+
+//Print switch in requested format from pdf
+int printSwitch(int* switchArr, char* alphabet){
+	printf("\n\n\n\t");
+
+  //Header
+	for( int x = 0; x <= 19; x++ ){
+		printf("%*c", 5, alphabet[x]);
+	}
+  //Values
+	printf("\nswitch:\t");
+	for( int x = 0; x < 20; x++ ){
+		printf("%*d", 5, switchArr[x]);
+	}
+  //Header
+	printf("\n\n\t");
+	for( int x = 20; x <= 39; x++ ){
+		printf("%*c", 5, alphabet[x]);
+	}
+  //Values
+	printf("\nswitch:\t");
+	for( int x = 20; x < 40; x++ ){
+		printf("%*d", 5, switchArr[x]);
+	}
+
+  //Header
+	printf("\n\n\t");
+	for( int x = 40; x <= 51; x++ ){
+		printf("%*c", 5, alphabet[x]);
+	}
+  //Values
+	printf("\nswitch:\t");
+	for( int x = 40; x < 52; x++ ){
+		printf("%*d", 5, switchArr[x]);
+	}
+	printf("\n\n\n");
+
+	return 0;
 }
 
+
+//yywrap wraps the rules defined
 int yywrap(void) {
     return 1;
+}
+
+
+int main(void) {
+
+  //Trie data structure
+  int switchArr[52];
+  char symbol[1024];
+  int next[1024];
+
+  char alphabet[52] = {
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+  'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+  };
+
+  //Initializes arrays with placeholder values
+  for (int x = 0; x < 52; x++){
+    switchArr[x] = -1;
+  }
+  for (int x = 0; x < 1024; x++){
+    symbol[x] = '*';
+  }
+  for (int x = 0; x < 1024; x++){
+    next[x] = -1;
+  }
+
+  // yylex is the main flex function -scanner
+  while(yylex() ) {}
+
+
+  //Print switch 
+	printSwitch(switchArr,alphabet);
+  return 0;
 }
