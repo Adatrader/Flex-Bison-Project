@@ -63,7 +63,7 @@ while       { printf("%s ", yytext); return (_while); }
 {intconstant}     { printf("intconstant "); return(_intconstant); }
 {doubleconstant}  { printf("doubleconstant "); return(_doubleconstant); }
 {string}          { printf("stringconstant "); return(_stringconstant); }
-{identifier}      { printf("id "); insert(yytext); return(_id); }
+{identifier}      { printf("id "); return(_id); }
 
 
   /* Operators */
