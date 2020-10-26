@@ -107,8 +107,8 @@ while       { printf("%s ", yytext); return (_while); }
 
 /* Helper Methods */
 
-int getNextSymbol(char* s, int pos){
-  int char_val = s[pos];
+int getNextSymbol(char* string, int pos){
+  int char_val = string[pos];
   if (char_val >= 97){
     return char_val - 97 + 26;
   }else{
@@ -126,8 +126,60 @@ int findFirstEmpty(char* arr, int size){
   return i;
 }
 
-//Create();
+//createOrSearch returns 1 if input string is accepted by the search,
+//returns 0 if rejected, but then creates an entry in the trie structure
 
+int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
+  int valueOfSymbol = getNextSymbol(string, 0);
+  int pointer = switchArr[valueOfSymbol];
+  //if pointer is undefined then Create()
+  //pointer is undefined if the switchArr is -1 (because of how its initialized)
+  if(pointer == -1){
+    //defines the current location in the array to go to by finding the first empty place
+    int positionOfArray = findFirstEmpty(symbol, sizeof(symbol)/sizeof(*symbol));
+    switchArr[valueOfSymbol] = positionOfArray;
+    for(int i = 1; i < strlen(string); i++){
+      symbol[positionOfArray] = s[i];
+    }
+
+    return false;
+  }
+  else {
+    //the position of the marker for getNextSymbol
+    int i = 1;
+    valueOfSymbol = getNextSymbol(string, i);
+    int exit = false;
+    while(!exit && i < strlen(s)){
+      if(symbol[pointer] == valueOfSymbol){
+        pointer++;
+        i++;
+        valueOfSymbol = getNextSymbol(string, i);
+      } else {
+        exit = true;
+      }
+    }
+
+    if(exit){
+      int nextTablePosition;
+      //similar to the outer if statement, checks if next is undefined
+      if(next[pointer] == -1){
+        nextTablePosition = findFirstEmpty(symbol, sizeof(symbol)/sizeof(*symbol));
+        next[pointer] = nextTablePosition;
+      } else {
+        nextTablePosition = next[pointer];
+      }
+
+      while(i < strlen(s)){
+        symbol[nextTablePosition] = s[i];
+        nextTablePosition++;
+        i++;
+      }
+
+    }
+    int accepted = !exit;
+    return accepted;
+  }
+}
 
 //Print switch in requested format from pdf
 int printSwitch(int* switchArr, char* alphabet){
@@ -203,7 +255,7 @@ int main(void) {
   while(yylex() ) {}
 
 
-  //Print switch 
+  //Print switch
   printSwitch(switchArr,alphabet);
   return 0;
 }
