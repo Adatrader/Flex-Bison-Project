@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include "toy_scanner.h"
 
+int getNextSymbol(char*, int);
+int findFirstEmpty(char*, int);
+void insert(char*);
 %}
 
 
@@ -60,7 +63,7 @@ while       { printf("%s ", yytext); return (_while); }
 {intconstant}     { printf("intconstant "); return(_intconstant); }
 {doubleconstant}  { printf("doubleconstant "); return(_doubleconstant); }
 {string}          { printf("stringconstant "); return(_stringconstant); }
-{identifier}      { printf("id "); return(_id); }
+{identifier}      { printf("id "); insert(yytext); return(_id); }
 
 
   /* Operators */
@@ -104,7 +107,24 @@ while       { printf("%s ", yytext); return (_while); }
 
 /* Helper Methods */
 
-//getNextSymbol();
+int getNextSymbol(char* s, int pos){
+  int char_val = s[pos];
+  if (char_val >= 97){
+    return char_val - 97 + 26;
+  }else{
+    return char_val - 65;
+  }
+}
+
+int findFirstEmpty(char* arr, int size){
+  int i = 0;
+  for(i; i < size; i++){
+    if (arr[i] == '*'){
+      return i;
+    }
+  }
+  return i;
+}
 
 //Create();
 
@@ -153,7 +173,6 @@ int printSwitch(int* switchArr, char* alphabet){
 int yywrap(void) {
     return 1;
 }
-
 
 int main(void) {
 
