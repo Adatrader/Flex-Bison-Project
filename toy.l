@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include "toy_scanner.h"
 
+int getNextSymbol(char*, int);
+int findFirstEmpty(char*, int);
+void insert(char*);
 %}
 
 
@@ -104,48 +107,65 @@ while       { printf("%s ", yytext); return (_while); }
 
 /* Helper Methods */
 
-//getNextSymbol();
+int getNextSymbol(char* s, int pos){
+  int char_val = s[pos];
+  if (char_val >= 97){
+    return char_val - 97 + 26;
+  }else{
+    return char_val - 65;
+  }
+}
+
+int findFirstEmpty(char* arr, int size){
+  int i = 0;
+  for(i; i < size; i++){
+    if (arr[i] == '*'){
+      return i;
+    }
+  }
+  return i;
+}
 
 //Create();
 
 
 //Print switch in requested format from pdf
 int printSwitch(int* switchArr, char* alphabet){
-	printf("\n\n\n\t");
+  printf("\n\n\n\t");
 
   //Header
-	for( int x = 0; x <= 19; x++ ){
-		printf("%*c", 5, alphabet[x]);
-	}
+  for( int x = 0; x <= 19; x++ ){
+    printf("%*c", 5, alphabet[x]);
+  }
   //Values
-	printf("\nswitch:\t");
-	for( int x = 0; x < 20; x++ ){
-		printf("%*d", 5, switchArr[x]);
-	}
+  printf("\nswitch:\t");
+  for( int x = 0; x < 20; x++ ){
+    printf("%*d", 5, switchArr[x]);
+  }
   //Header
-	printf("\n\n\t");
-	for( int x = 20; x <= 39; x++ ){
-		printf("%*c", 5, alphabet[x]);
-	}
+  printf("\n\n\t");
+  for( int x = 20; x <= 39; x++ ){
+    printf("%*c", 5, alphabet[x]);
+  }
   //Values
-	printf("\nswitch:\t");
-	for( int x = 20; x < 40; x++ ){
-		printf("%*d", 5, switchArr[x]);
-	}
+  printf("\nswitch:\t");
+  for( int x = 20; x < 40; x++ ){
+    printf("%*d", 5, switchArr[x]);
+  }
 
   //Header
-	printf("\n\n\t");
-	for( int x = 40; x <= 51; x++ ){
-		printf("%*c", 5, alphabet[x]);
-	}
+  printf("\n\n\t");
+  for( int x = 40; x <= 51; x++ ){
+    printf("%*c", 5, alphabet[x]);
+  }
   //Values
-	printf("\nswitch:\t");
-	for( int x = 40; x < 52; x++ ){
-		printf("%*d", 5, switchArr[x]);
-	}
-	printf("\n\n\n");
+  printf("\nswitch:\t");
+  for( int x = 40; x < 52; x++ ){
+    printf("%*d", 5, switchArr[x]);
+  }
+  printf("\n\n\n");
 
-	return 0;
+  return 0;
 }
 
 
@@ -153,7 +173,6 @@ int printSwitch(int* switchArr, char* alphabet){
 int yywrap(void) {
     return 1;
 }
-
 
 int main(void) {
 
@@ -185,6 +204,6 @@ int main(void) {
 
 
   //Print switch 
-	printSwitch(switchArr,alphabet);
+  printSwitch(switchArr,alphabet);
   return 0;
 }
