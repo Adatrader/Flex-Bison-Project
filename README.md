@@ -7,6 +7,13 @@ Ta Wei Chien
 ## Run Project
 apt-get install flex bison<br/>
 
+Shell script:<br/>
+```
+chmod +x runSampleGiven.sh
+./runSampleGiven.sh
+```
+
+<br/> or <br/>
 ```
 lex toy.l
 cc lex.yy.c
