@@ -563,7 +563,7 @@ char *yytext;
 #line 2 "toy.l"
 /* C Headers, Declarations, Vars */
 #include <stdio.h>
-#include<stdbool.h>
+#include <stdbool.h>
 #include "toy_scanner.h"
 
 int getNextSymbol(char*, int);
@@ -2174,7 +2174,7 @@ int findFirstEmpty(char* arr, int size){
 
 //createOrSearch returns 1 if input string is accepted by the search,
 //returns 0 if rejected, but then creates an entry in the trie structure
-
+/*
 int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
   int valueOfSymbol = getNextSymbol(string, 0);
   int pointer = switchArr[valueOfSymbol];
@@ -2225,7 +2225,7 @@ int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
     int accepted = !exit;
     return accepted;
   }
-}
+} */
 
 // Print symbol and next table
 int printSNTable(char* symbol, int* next){
