@@ -1,6 +1,7 @@
 %{
 /* C Headers, Declarations, Vars */
 #include <stdio.h>
+#include<stdbool.h>
 #include "toy_scanner.h"
 
 int getNextSymbol(char*, int);
@@ -181,6 +182,7 @@ int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
   }
 }
 
+<<<<<<< Updated upstream
 //Print switch in requested format from pdf
 int printSwitch(int* switchArr, char* alphabet){
   printf("\n\n\n\t");
@@ -197,10 +199,62 @@ int printSwitch(int* switchArr, char* alphabet){
   //Header
   printf("\n\n\t");
   for( int x = 20; x <= 39; x++ ){
+=======
+// Print symbol and next table
+int printSNTable(char* symbol, int* next){
+  int count = 0;
+  for(int x = 0; x < 6; x++){
+  printf("\n\t");
+
+  //Header
+  for ( int i = 0+count; i < 20+count; i++ ){
+		printf("%*d",5,i);
+	}
+
+  //Symbol
+	printf( "\nsymbol:\t" );
+	for ( int i = 0+count; i < 20+count; i++ ){
+		printf("%*c",5,symbol[i]);
+	}
+
+  //Next
+	printf( "\nnext:\t" );
+	for ( int i = 0+count; i < 20+count; i++ ){
+		if ( next[i] > 0 )
+			printf("%*d",5,next[i]);
+		else
+			printf("%*c",5,' ');
+	}
+	  printf("\n");
+    count+=20;
+  }
+    return 0;
+}
+
+//Print switch table
+int printSwitch(int* switchArr, char* alphabet){
+  printf("\n\n\n\t");
+
+  //Header
+  for( int x = 0; x <= 19; x++ ){
+>>>>>>> Stashed changes
     printf("%*c", 5, alphabet[x]);
   }
   //Values
   printf("\nswitch:\t");
+<<<<<<< Updated upstream
+=======
+  for( int x = 0; x < 20; x++ ){
+    printf("%*d", 5, switchArr[x]);
+  }
+  //Header
+  printf("\n\n\t");
+  for( int x = 20; x <= 39; x++ ){
+    printf("%*c", 5, alphabet[x]);
+  }
+  //Values
+  printf("\nswitch:\t");
+>>>>>>> Stashed changes
   for( int x = 20; x < 40; x++ ){
     printf("%*d", 5, switchArr[x]);
   }
@@ -257,5 +311,9 @@ int main(void) {
 
   //Print switch
   printSwitch(switchArr,alphabet);
+<<<<<<< Updated upstream
+=======
+  printSNTable(symbol,next);
+>>>>>>> Stashed changes
   return 0;
 }
