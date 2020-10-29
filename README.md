@@ -13,7 +13,7 @@ chmod +x runSampleGiven.sh
 ./runSampleGiven.sh
 ```
 
-<br/> or <br/>
+<br/> or
 ```
 lex toy.l
 cc lex.yy.c

@@ -5,8 +5,10 @@
 #include "toy_scanner.h"
 
 int getNextSymbol(char*, int);
-int findFirstEmpty(char*, int);
-void insert(char*);
+int findFirstEmpty(char*);
+int createOrSearch(char*, int*, char*, int*);
+int printSwitch(int*, char*);
+int printSNTable(char*, int*);
 %}
 
 
@@ -117,44 +119,46 @@ int getNextSymbol(char* string, int pos){
   }
 }
 
-int findFirstEmpty(char* arr, int size){
-  int i = 0;
-  for(i; i < size; i++){
+int findFirstEmpty(char* arr){
+  for(int i = 0; i < 4096; i++){
     if (arr[i] == '*'){
       return i;
+      break;
     }
   }
-  return i;
 }
 
 //createOrSearch returns 1 if input string is accepted by the search,
 //returns 0 if rejected, but then creates an entry in the trie structure
 
-int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
-  int valueOfSymbol = getNextSymbol(string, 0);
+int createOrSearch(char *s, int* switchArr, char* symbol, int* next){
+  int valueOfSymbol = getNextSymbol(s, 0);
   int pointer = switchArr[valueOfSymbol];
+
   //if pointer is undefined then Create()
   //pointer is undefined if the switchArr is -1 (because of how its initialized)
+
   if(pointer == -1){
     //defines the current location in the array to go to by finding the first empty place
-    int positionOfArray = findFirstEmpty(symbol, sizeof(symbol)/sizeof(*symbol));
+    int positionOfArray = findFirstEmpty(symbol);
+    //printf("\npositionOfArray at %c: %d\n", s[0], findFirstEmpty(symbol));
     switchArr[valueOfSymbol] = positionOfArray;
-    for(int i = 1; i < strlen(string); i++){
+    for(int i = 1; i < strlen(s); i++){
       symbol[positionOfArray] = s[i];
+      positionOfArray++;
     }
-
+    symbol[positionOfArray] = '@';
     return false;
   }
   else {
     //the position of the marker for getNextSymbol
     int i = 1;
-    valueOfSymbol = getNextSymbol(string, i);
+    valueOfSymbol = getNextSymbol(s, i);
     int exit = false;
     while(!exit && i < strlen(s)){
-      if(symbol[pointer] == valueOfSymbol){
+      if(symbol[pointer] == s[i]){
         pointer++;
         i++;
-        valueOfSymbol = getNextSymbol(string, i);
       } else {
         exit = true;
       }
@@ -164,19 +168,24 @@ int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
       int nextTablePosition;
       //similar to the outer if statement, checks if next is undefined
       if(next[pointer] == -1){
-        nextTablePosition = findFirstEmpty(symbol, sizeof(symbol)/sizeof(*symbol));
+        nextTablePosition = findFirstEmpty(symbol);
         next[pointer] = nextTablePosition;
       } else {
         nextTablePosition = next[pointer];
       }
+
+      //printf("\nnextTablePosition at %c: %d\n", s[1], nextTablePosition);
 
       while(i < strlen(s)){
         symbol[nextTablePosition] = s[i];
         nextTablePosition++;
         i++;
       }
-
+      symbol[nextTablePosition] = '@';
     }
+
+    //printSNTable(symbol, next);
+
     int accepted = !exit;
     return accepted;
   }
@@ -185,32 +194,46 @@ int createOrSearch(char *string, int* switchArr, char* symbol, int* next){
 // Print symbol and next table
 int printSNTable(char* symbol, int* next){
   int count = 0;
-  for(int x = 0; x < 6; x++){
-  printf("\n\t");
+  int printLoop = true;
+  for(int x = 0; x < 50; x++){
+    if(!printLoop){
+      break;
+    }
 
-  //Header
-  for ( int i = 0+count; i < 20+count; i++ ){
-		printf("%*d",5,i);
-	}
+    printf("\n\t");
 
-  //Symbol
-	printf( "\nsymbol:\t" );
-	for ( int i = 0+count; i < 20+count; i++ ){
-		printf("%*c",5,symbol[i]);
-	}
+    //Header
+    for ( int i = 0+count; i < 20+count; i++ ){
+      if(symbol[i] == '*'){
+        printLoop = false;
+      }
+      printf("%*d",5,i);
+  	}
 
-  //Next
-	printf( "\nnext:\t" );
-	for ( int i = 0+count; i < 20+count; i++ ){
-		if ( next[i] > 0 )
-			printf("%*d",5,next[i]);
-		else
-			printf("%*c",5,' ');
-	}
-	  printf("\n");
-    count+=20;
+    //Symbol
+  	printf( "\nsymbol:\t" );
+  	for ( int i = 0+count; i < 20+count; i++ ){
+      if(symbol[i] == '*'){
+        printLoop = false;
+      }
+      printf("%*c",5,symbol[i]);
+  	}
+
+    //Next
+  	printf( "\nnext:\t" );
+  	for ( int i = 0+count; i < 20+count; i++ ){
+      if(symbol[i] == '*'){
+        printLoop = false;
+      }
+  		if ( next[i] > 0 )
+  			printf("%*d",5,next[i]);
+  		else
+  			printf("%*c",5,' ');
+  	}
+  	  printf("\n");
+      count+=20;
   }
-    return 0;
+  return 0;
 }
 
 //Print switch table
@@ -262,8 +285,8 @@ int main(void) {
 
   //Trie data structure
   int switchArr[52];
-  char symbol[1024];
-  int next[1024];
+  char symbol[4096];
+  int next[4096];
 
   char alphabet[52] = {
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -276,15 +299,24 @@ int main(void) {
   for (int x = 0; x < 52; x++){
     switchArr[x] = -1;
   }
-  for (int x = 0; x < 1024; x++){
+  for (int x = 0; x < 4096; x++){
     symbol[x] = '*';
   }
-  for (int x = 0; x < 1024; x++){
+  for (int x = 0; x < 4096; x++){
     next[x] = -1;
   }
 
   // yylex is the main flex function -scanner
-  while(yylex() ) {}
+  int curr = yylex();
+  while(curr) {
+    char s[strlen(yytext)];
+		strcpy(s,yytext);
+		if (curr == _booleanconstant || curr == _id || curr <= _while){
+			createOrSearch(s, switchArr, symbol, next);
+		}
+		curr = yylex();
+
+  }
 
 
   //Print switch
