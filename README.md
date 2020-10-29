@@ -13,22 +13,9 @@ chmod +x runSampleGiven.sh
 ./runSampleGiven.sh
 ```
 
-<br/> or
+<br/> or <br/>
 ```
 lex toy.l
 cc lex.yy.c
 ./a.out < sampleGiven.toy
-```
-<br/>
-Test Cases <br/>
-Test Case One: <br/>
-```
-chmod +x runTestCase1.sh
-./runTestCase1.sh
-```
-<br/>
-Test Case Two: <br/>
-```
-chmod +x runTestCase2.sh
-./runTestCase2.sh
 ```

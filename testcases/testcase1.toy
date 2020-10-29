@@ -1,16 +1,20 @@
-int main()
+int runFib()
 {
-  int n, first = 0, second = 1, next, c;
+  int num = 0;
+  int first = 0;
+  int second = 1 
+  int next;
+  int counter;
 
-  printf("Enter the number of terms\n");
+  printf("Please submit number of terms:");
   scanf("%d", &n);
 
-  printf("First %d terms of Fibonacci series are:\n", n);
+  printf("First %d values of Fib series are:\n", num);
 
-  for (c = 0; c < n; c++)
+  for (counter = 0; counter < num; counter++)
   {
-    if (c <= 1)
-      next = c;
+    if (counter <= 1)
+      next = counter;
     else
     {
       next = first + second;
