@@ -101,7 +101,7 @@ FUNCTIONDECL: 	TYPE _id '(' FORMALS ')' STMTBLOCK
 
 /* 7 */
 FORMALS: 		VARIABLEPC
-			|	; 			//Epsilon
+			|	; 					//Epsilon
 			
 VARIABLEPC: 	
 				VARIABLE VARIABLEPC	// Right recursion
