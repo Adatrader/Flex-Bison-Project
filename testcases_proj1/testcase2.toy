@@ -1,0 +1,35 @@
+ 
+int calculation()
+{
+	char op;
+	float numOne, numTwo, anwser = 0;
+	
+	printf("Enter an Operator Choice (+, -, *, /)  :  ");
+  	scanf("%c", &Operator);
+  	
+	printf("\n Please Enter number one and number two  :  ");
+  	scanf("%f%f", &numOne, &numTwo);
+  	
+  	switch(op)
+  	{
+  	  	case '*':
+  			anwser = numOne * numTwo;
+  			break;
+  		case '/':
+  			anwser = numOne / numTwo;
+  			break;
+  		case '+':
+  			anwser = numOne + numTwo;
+  			break;
+  		case '-':
+  			anwser = numOne - numTwo;
+  			break;  			
+
+		default:
+			printf("\n Incorrect Operator ");				    			
+	}
+  
+	printf("\n The result is %.2f", result);
+	
+  	return 0;
+}

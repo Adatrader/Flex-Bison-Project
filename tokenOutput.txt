@@ -1,27 +1,59 @@
+int id leftparen int id rightparen leftbrace 
+if leftparen id greater intconstant rightparen return id multiplication id leftparen id minus intconstant rightparen semicolon 
+else return intconstant semicolon 
+rightbrace 
 
-int id leftparen int id rightparen leftbrace
-if leftparen id greater intconstant rightparen return id multiplication id leftparen id minus intconstant rightparen semicolon
-else return intconstant semicolon
-rightbrace
+void id leftparen rightparen leftbrace 
+int id semicolon 
+int id semicolon 
+println leftparen stringconstant comma id leftparen intconstant rightparen comma stringconstant rightparen semicolon 
+id assignop intconstant semicolon id assignop intconstant semicolon 
+for leftparen semicolon id lessequal intconstant semicolon rightparen leftbrace id assignop id multiplication id semicolon id assignop id plus intconstant semicolon rightbrace 
+println leftparen stringconstant comma id rightparen semicolon 
+rightbrace 
 
-void id leftparen rightparen leftbrace
-int id semicolon
-int id semicolon
-println leftparen stringconstant comma id leftparen intconstant rightparen comma stringconstant rightparen semicolon
-id assignop intconstant semicolon id assignop intconstant semicolon
-for leftparen semicolon id lessequal intconstant semicolon rightparen leftbrace id assignop id multiplication id semicolon id assignop id plus intconstant semicolon rightbrace
-println leftparen stringconstant comma id rightparen semicolon
-rightbrace
+class id leftbrace 
+int id semicolon 
+double id semicolon 
+boolean id semicolon 
+string id semicolon 
+int leftbracket rightbracket id semicolon 
+id assignop true semicolon 
+id assignop intconstant semicolon id assignop doubleconstant semicolon 
+id assignop stringconstant semicolon 
+while leftparen id assignop leftparen id division intconstant rightparen less intconstant rightparen println leftparen id comma stringconstant rightparen semicolon 
+id assignop newarray leftparen intconstant comma int rightparen semicolon 
+rightbrace 
 
-class id leftbrace
-int id semicolon
-double id semicolon
-boolean id semicolon
-string id semicolon
-int leftbracket rightbracket id semicolon
-id assignop true semicolon
-id assignop intconstant semicolon id assignop doubleconstant semicolon
-id assignop stringconstant semicolon
-while leftparen id assignop leftparen id division intconstant rightparen less intconstant rightparen println leftparen id comma stringconstant rightparen semicolon
-id assignop newarray leftparen intconstant comma int rightparen semicolon
-rightbrace
+
+	    A    B    C    D    E    F    G    H    I    J    K    L    M    N    O    P    Q    R    S    T
+switch:    -1   -1   48   -1   -1   54   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1   -1
+
+	    U    V    W    X    Y    Z    a    b    c    d    e    f    g    h    i    j    k    l    m    n
+switch:    -1   -1   -1   -1   -1   -1   78   65   43   59   16    3   -1   -1    0   -1   -1   -1   24   88
+
+	    o    p    q    r    s    t    u    v    w    x    y    z
+switch:    -1   33   -1   10   72   28   -1   20   83    7   -1   -1
+
+
+
+	    0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19
+symbol:     n    t    @    a    c    t    @    @    f    @    e    t    u    r    n    @    l    s    e    @
+next:	    8             40                                                                                
+
+	   20   21   22   23   24   25   26   27   28   29   30   31   32   33   34   35   36   37   38   39
+symbol:    o    i    d    @    a    i    n    @    o    t    a    l    @    r    i    n    t    l    n    @
+next:	                                           79                                                       
+
+	   40   41   42   43   44   45   46   47   48   49   50   51   52   53   54   55   56   57   58   59
+symbol:    u    n    n    y    @    s    s    @    S    4    1    1    0    @    u    n    n    y    @    o
+next:	                                                                                                    
+
+	   60   61   62   63   64   65   66   67   68   69   70   71   72   73   74   75   76   77   78   79
+symbol:    u    b    l    e    @    o    o    l    e    a    n    @    t    r    i    n    g    @    @    r
+next:	                                                                                                    
+
+	   80   81   82   83   84   85   86   87   88   89   90   91   92   93   94   95   96   97   98   99
+symbol:    u    e    @    h    i    l    e    @    e    w    a    r    r    a    y    @    *    *    *    *
+next:	                                                                                                    
+

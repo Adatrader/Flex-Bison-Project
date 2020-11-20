@@ -1,0 +1,28 @@
+int runFib()
+{
+  int num = 0;
+  int first = 0;
+  int second = 1 
+  int next;
+  int counter;
+
+  printf("Please submit number of terms:");
+  scanf("%d", &n);
+
+  printf("First %d values of Fib series are:\n", num);
+
+  for (counter = 0; counter < num; counter++)
+  {
+    if (counter <= 1)
+      next = counter;
+    else
+    {
+      next = first + second;
+      first = second;
+      second = next;
+    }
+    printf("%d\n", next);
+  }
+
+  return 0;
+}
