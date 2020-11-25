@@ -5,9 +5,17 @@
  
 %}
 
-/* Tokens we established from Project 1 */
+/* left, right, nonassoc yacc keywords for operator precedence (highest to lowest) */
+%left '[' '.'
+%left '+' '-'
+%left '*' '/' '%'
+%left '<' '<=' '>' '>='
+%left '==' '!='
+%left '&&'
+%left '||'
+%left '=='
 
-/* Tokens */
+/* Tokens we established from Project 1 */
 %token _boolean
 %token _break
 %token _class
@@ -66,7 +74,7 @@
 }
 
 %%
-/* Grammar rules and actions */
+/* Production rules and actions */
 /* '+' = P, '+,' = PC */
 
 /* 1 */
@@ -114,6 +122,10 @@ CLASSDECL:
 
 
 %%
+
+void yyerror(char *s) {
+ fprintf(stderr, "%s\n", s);
+}
 
 int main(){
     yyparse();
