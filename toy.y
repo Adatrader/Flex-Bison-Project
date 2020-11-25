@@ -75,50 +75,133 @@
 
 %%
 /* Production rules and actions */
-/* '+' = P, '+,' = PC */
+/* '+' = P, '+,' = PC, '<optional>' = O, '*' = M */
 
-/* 1 */
+/* Production Rule 1 */
 PROGRAM:		DECLP;
 
-DECLP:			DECL DECLP; 		// Right recursion
-			|	DECL;				// Terminal
+DECLP:			DECL DECLP 		// Right recursion
+			|	DECL ;		// Terminal
 
-/* 2 */
+/* Production Rule 2 */
 DECL:			VARIABLEDECL 
 			|	FUNCTIONDECL 
 			| 	CLASSDECL 
 			| 	INTERFACEDECL;
 
-/* 3 */
+/* Production Rule 3 */
 VARIABLEDECL: 	VARIABLE ';' ;
 
-/* 4 */
-VARIABLE:		TYPE _id;
+/* Production Rule 4 */
+VARIABLE:		TYPE _id ;
 
-/* 5 */
+/* Production Rule 5 */
 TYPE:			_int
 			|	_double
 			|	_boolean
 			|	_string
 			|	TYPE '[' ']'
-			|	_id;
+			|	_id ;
 
-/* 6 */
+/* Production Rule 6 */
 FUNCTIONDECL: 	TYPE _id '(' FORMALS ')' STMTBLOCK
 			|	VOID _id '(' FORMALS ')' STMTBLOCK;
 
-/* 7 */
+/* Production Rule 7 */
 FORMALS: 		VARIABLEPC
-			|	; 					//Epsilon
+			|	; 			// Epsilon
 			
 VARIABLEPC: 	
-				VARIABLE VARIABLEPC	// Right recursion
-			|	VARIABLE;			// Terminal
-/* 8 */
+				VARIABLE VARIABLEPC	// One or more comma seperated
+			|	VARIABLE;		// Terminal
+/* Production Rule 8 */
 CLASSDECL: 		
-			CLASS _id _extends _id	
-			
+				_class _id CLASSDECLO '{' FIELDM '}' ;
+CLASSDECLO:
+				_extends _id
+			|	_implements IDPC
+			|	_extends _id _implements IDPC
+			|	;			// Epsilon
+IDPC:
+				_id ',' IDPC // One or more comma seperated
+			|	_id ;
+FIELDM:
+				FIELD FIELDM
+			|	;			// Epsilon
 
+/* Production Rule 9 */
+FIELD:
+				VARIABLEDECL
+			|	FUNCTIONDECL ;
+
+/* Production Rule 10 */
+INTERFACEDECL:
+				_interface _id '{' PROTOTYPEM '}'
+PROTOTYPEM:
+				PROTOTYPE PROTOTYPEM // Right recursion
+			|	;			// Epsilon
+
+/* Production Rule 11 */
+PROTOTYPE:
+				TYPE _id '(' FORMALS ')' ';'
+			|	_void _id '(' FORMALS ')' ';' ;
+
+/* Production Rule 12 */
+STMTBLOCK:
+				'{' VARIABLEDECLM STMTM '}' ;
+VARIABLEDECLM:
+				VARIABLEDECL VARIABLEDECLM // Right recursion
+			|	;			// Epsilon
+STMTM:
+				STMT STMTM // Right recursion
+			|	;			// Epsilon
+
+/* Production Rule 13 */
+STMT:
+				EXPRO ';'
+			|	IFSTMT
+			|	WHILESTMT
+			|	FORSTMT
+			|	BREAKSTMT
+			|	RETURNSTMT
+			|	PRINTSTMT
+			|	STMTBLOCK ;
+EXPRO:
+				EXPR
+			|	;			// Epsilon
+
+/* Production Rule 14 */
+IFSTMT:
+				_if '(' EXPR ')' STMT ELSESTMTO ;
+ELSESTMTO:
+				_else STMT
+			|	;			// Epsilon
+
+/* Production Rule 15 */
+WHILESTMT:
+				_while '(' EXPR ')' STMT ;
+
+/* Production Rule 16 */
+FORSTMT:
+				_for '(' EXPRO ';' EXPR ';' EXPRO ')' STMT ;
+
+/* Production Rule 17 */
+BREAKSTMT:
+				_break ';' ;
+
+/* Production Rule 18 */
+RETURNSTMT:
+				_return EXPRO ';' ;
+
+/* Production Rule 19 */
+PRINTSTMT:
+				_println '(' EXPRPC ')' ';' ;
+EXPRPC:
+				EXPR ',' EXPRPC // One or more comma seperated
+			|	EXPR ;			// Terminal
+
+/* Production Rule 20 */
+						
 
 
 %%
