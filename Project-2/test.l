@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "toy_scanner.h"
-#include "toy.tab.h"
 
 
 char alphabet[52] = {
@@ -313,4 +312,29 @@ int printSwitch(int* switchArr, char* alphabet){
 //yywrap wraps the rules defined
 int yywrap(void) {
     return 1;
+}
+
+int main(void) {
+  
+	initSwitch();
+	initSymbol();
+	initNext();
+
+  // yylex is the main flex function -scanner
+  int curr = yylex();
+  while(curr) {
+    char s[strlen(yytext)];
+		strcpy(s,yytext);
+		if (curr == _booleanconstant || curr == _id || curr <= _while){
+			createOrSearch(s, switchArr, symbol, next);
+		}
+		curr = yylex();
+
+  }
+
+
+  //Print switch
+  printSwitch(switchArr,alphabet);
+  printSNTable(symbol,next);
+  return 0;
 }

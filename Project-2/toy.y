@@ -1,7 +1,5 @@
 %{
- 
 #include <stdio.h>
-// #include "lex.yy.c"  
 
 %}
 
@@ -68,11 +66,11 @@
 %token _booleanconstant
 %token _id
 
-// Bridge between lex and y code 
-%union{
+// // Bridge between lex and y code 
+// %union{
 
 
-}
+// }
 
 %%
 // Production rules and actions (Print production number when reducing)
@@ -265,7 +263,9 @@ void yyerror(char *s) {
 }
 
 int main(){
-
-    yyparse();
-    return 0;
+	initSwitch();
+	initSymbol();
+	initNext();
+    
+	return(yyparse());
 }
