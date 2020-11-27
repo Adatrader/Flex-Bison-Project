@@ -6,18 +6,39 @@ Adam VanRiper<br/>
 Nandan Vinjamury<br/>
 Ta Wei Chien
 
+## Prerequisite
+> make sure you are using Linux OS
+```
+sudo apt-get install build-essential
+sudo apt-get install flex bison
+```
+
 ## Run Project One
 
-apt-get install flex bison<br/>
-
-Shell script:<br/>
+### Using shell script:
 
 ```
+cd Project-1
 chmod +x runSampleGiven_proj1.sh
 ./runSampleGiven_proj1.sh
 ```
 
-<br/> or <br/>
+### Using Makefile
+> build
+```
+cd Project-1
+make
+```
+> test toy-lexer
+```
+./toy_lexer < sampleGiven.toy
+```
+> if you want to remove generated file after testing
+```
+make clean
+```
+
+### or
 
 ```
 flex toy.l
