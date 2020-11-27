@@ -113,7 +113,7 @@ TYPE:			_int {printf("[reduce 10] \n");}
 
 // Production Rule 6
 FUNCTIONDECL: 	TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 16] \n");}
-			|	VOID _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 17] \n");};
+			|	_void _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 17] \n");};
 
 // Production Rule 7
 FORMALS: 		VARIABLEPC {printf("[reduce 18] \n");}
