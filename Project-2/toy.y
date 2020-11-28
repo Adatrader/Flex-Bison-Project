@@ -127,7 +127,11 @@ BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
 ;
 
 
-// rule 20 - 
+// rule 19 - 
+PRINTSTMT: _println _leftparen MORE_EXPR _rightparen _semicolon {printf("[reduce 61]");}
+
+
+// rule 20 - c3
 EXPR: LVALUE _assignop EXPR {printf("[reduce 64]");}
  	| CONSTANT {printf("[reduce 65]");}
  	| LVALUE {printf("[reduce 66]");}
