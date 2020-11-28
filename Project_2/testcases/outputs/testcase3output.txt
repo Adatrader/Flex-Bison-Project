@@ -1,0 +1,3 @@
+id [shift][reduce 15]
+assignop [shift]
+[reject]
