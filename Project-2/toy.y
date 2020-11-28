@@ -127,9 +127,13 @@ BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
 ;
 
 
+// rule 18 - 
+RETURNSTMT: _return ZOM_EXPR _semicolon {printf("[reduce 60]");}
+;
+
 // rule 19 - 
 PRINTSTMT: _println _leftparen MORE_EXPR _rightparen _semicolon {printf("[reduce 61]");}
-
+;
 
 // rule 20 - c3
 EXPR: LVALUE _assignop EXPR {printf("[reduce 64]");}
@@ -195,6 +199,11 @@ MORE_VARIABLE: _comma VARIABLE MORE_VARIABLE {printf("[reduce 19]");}
 
 MORE_EXPR: EXPR _comma MORE_EXPR {printf("[reduce 62]");}
     | EXPR {printf("[reduce 63]");}
+;
+
+ZOM_EXPR: EXPR {printf("[reduce 51]");}
+	| EPSILON {printf("[reduce 52]");}
+;
 
 %%
 
