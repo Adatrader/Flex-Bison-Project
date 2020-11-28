@@ -110,6 +110,11 @@ TYPE: _int {printf("[reduce 9]");}
  ;
 
 
+// rule 6 
+FUNCTIONDECL: TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 15]");}
+    | _void _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 16]");}
+;
+
 // rule 7 - c3
 FORMALS: VARIABLE MORE_VARIABLE {printf("[reduce 17]");}
 	| EPSILON {printf("[reduce 18]");}
