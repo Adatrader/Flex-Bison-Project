@@ -2,7 +2,7 @@
 /* C Headers, Declarations, Vars */
 #include <stdio.h>
 #include <stdbool.h>
-#include "toy_scanner.h"
+#include "toy.tab.h"
 
 int getNextSymbol(char*, int);
 int findFirstEmpty(char*);
@@ -39,61 +39,61 @@ multicomment    \/\*[^*]*\*\/\n
 
   /* Keywords (#1)*/
 
-boolean     { printf("%s [shift]", yytext); return(_boolean); }
-break       { printf("%s [shift]", yytext); return(_break); }
-class       { printf("%s [shift]", yytext); return (_class); }
-double      { printf("%s [shift]", yytext); return (_double); }
-else        { printf("%s [shift]", yytext); return (_else); }
-extends     { printf("%s [shift]", yytext); return (_extends); }
-false       { printf("%s [shift]", yytext); return (_booleanconstant); }
-for         { printf("%s [shift]", yytext); return (_for); }
-if          { printf("%s [shift]", yytext); return (_if); }
-implements  { printf("%s [shift]", yytext); return (_implements); }
-int         { printf("%s [shift]", yytext); return (_int); }
-interface   { printf("%s [shift]", yytext); return (_interface); }
-new         { printf("%s [shift]", yytext); return (_new); }
-newarray    { printf("%s [shift]", yytext); return (_newarray); }
-null        { printf("%s [shift]", yytext); return (_null); }
-println     { printf("%s [shift]", yytext); return (_println); }
-readln      { printf("%s [shift]", yytext); return (_readln); }
-return      { printf("%s [shift]", yytext); return (_return); }
-string      { printf("%s [shift]", yytext); return (_string); }
-this        { printf("%s [shift]", yytext); return (_this); }
-true        { printf("%s [shift]", yytext); return (_booleanconstant); }
-void        { printf("%s [shift]", yytext); return (_void); }
-while       { printf("%s [shift]", yytext); return (_while); }
+boolean     { printf("\n%s [shift]", yytext); return(_boolean); }
+break       { printf("\n%s [shift]", yytext); return(_break); }
+class       { printf("\n%s [shift]", yytext); return (_class); }
+double      { printf("\n%s [shift]", yytext); return (_double); }
+else        { printf("\n%s [shift]", yytext); return (_else); }
+extends     { printf("\n%s [shift]", yytext); return (_extends); }
+false       { printf("\n%s [shift]", yytext); return (_booleanconstant); }
+for         { printf("\n%s [shift]", yytext); return (_for); }
+if          { printf("\n%s [shift]", yytext); return (_if); }
+implements  { printf("\n%s [shift]", yytext); return (_implements); }
+int         { printf("\n%s [shift]", yytext); return (_int); }
+interface   { printf("\n%s [shift]", yytext); return (_interface); }
+new         { printf("\n%s [shift]", yytext); return (_new); }
+newarray    { printf("\n%s [shift]", yytext); return (_newarray); }
+null        { printf("\n%s [shift]", yytext); return (_null); }
+println     { printf("\n%s [shift]", yytext); return (_println); }
+readln      { printf("\n%s [shift]", yytext); return (_readln); }
+return      { printf("\n%s [shift]", yytext); return (_return); }
+string      { printf("\n%s [shift]", yytext); return (_string); }
+this        { printf("\n%s [shift]", yytext); return (_this); }
+true        { printf("\n%s [shift]", yytext); return (_booleanconstant); }
+void        { printf("\n%s [shift]", yytext); return (_void); }
+while       { printf("\n%s [shift]", yytext); return (_while); }
 
-{intconstant}     { printf("intconstant [shift]"); return(_intconstant); }
-{doubleconstant}  { printf("doubleconstant [shift]"); return(_doubleconstant); }
-{string}          { printf("stringconstant [shift]"); return(_stringconstant); }
-{identifier}      { printf("id [shift]"); return(_id); }
+{intconstant}     { printf("\nintconstant [shift]"); return(_intconstant); }
+{doubleconstant}  { printf("\ndoubleconstant [shift]"); return(_doubleconstant); }
+{string}          { printf("\nstringconstant [shift]"); return(_stringconstant); }
+{identifier}      { printf("\nid [shift]"); return(_id); }
 
 
   /* Operators */
-"+"             { printf("plus [shift]"); return(_plus); }
-"-"             { printf("minus [shift]"); return(_minus); }
-"*"             { printf("multiplication [shift]"); return(_multiplication); }
-"/"             { printf("division [shift]"); return(_division); }
-"%"             { printf("mod [shift]"); return(_mod); }
-"<"             { printf("less [shift]"); return(_less); }
-"<="            { printf("lessequal [shift]"); return(_lessequal); }
-">"             { printf("greater [shift]"); return(_greater); }
-">="            { printf("greaterequal [shift]"); return(_greaterequal); }
-"=="            { printf("equal [shift]"); return(_equal); }
-"!="            { printf("notequal [shift]"); return(_notequal); }
-"&&"            { printf("and [shift]"); return(_and); }
-"||"            { printf("or [shift]"); return(_or); }
-"!"             { printf("not [shift]"); return(_not); }
-"="             { printf("assignop [shift]"); return(_assignop); }
-";"             { printf("semicolon [shift]"); return(_semicolon); }
-","             { printf("comma [shift]"); return(_comma); }
-"."             { printf("period [shift]"); return(_period); }
-"("             { printf("leftparen [shift]"); return(_leftparen); }
-")"             { printf("rightparen [shift]"); return(_rightparen); }
-"["             { printf("leftbracket [shift]"); return(_leftbracket); }
-"]"             { printf("rightbracket [shift]"); return(_rightbracket); }
-"{"             { printf("leftbrace [shift]"); return(_leftbrace); }
-"}"             { printf("rightbrace [shift]"); return(_rightbrace); }
+"+"             { printf("\nplus [shift]"); return(_plus); }
+"-"             { printf("\nminus [shift]"); return(_minus); }
+"*"             { printf("\nmultiplication [shift]"); return(_multiplication); }
+"/"             { printf("\ndivision [shift]"); return(_division); }
+"%"             { printf("\nmod [shift]"); return(_mod); }
+"<"             { printf("\nless [shift]"); return(_less); }
+"<="            { printf("\nlessequal [shift]"); return(_lessequal); }
+">"             { printf("\ngreater [shift]"); return(_greater); }
+">="            { printf("\ngreaterequal [shift]"); return(_greaterequal); }
+"=="            { printf("\nequal [shift]"); return(_equal); }
+"!="            { printf("\nnotequal [shift]"); return(_notequal); }
+"&&"            { printf("\nand [shift]"); return(_and); }
+"||"            { printf("\nor [shift]"); return(_or); }
+"!"             { printf("\nnot [shift]"); return(_not); }
+"="             { printf("\nassignop [shift]"); return(_assignop); }
+";"             { printf("\nsemicolon [shift]"); return(_semicolon); }
+","             { printf("\ncomma [shift]"); return(_comma); }
+"."             { printf("\nperiod [shift]"); return(_period); }
+"("             { printf("\nleftparen [shift]"); return(_leftparen); }
+")"             { printf("\nrightparen [shift]"); return(_rightparen); }
+"["             { printf("\nleftbracket [shift]"); return(_leftbracket); }
+"]"             { printf("\nrightbracket [shift]"); return(_rightbracket); }
+"{"             { printf("\nleftbrace [shift]"); return(_leftbrace); }
+"}"             { printf("\nrightbrace [shift]"); return(_rightbrace); }
 
   /* Comments (#9) */
 {whitespace}    {;}
@@ -275,12 +275,12 @@ int printSwitch(int* switchArr, char* alphabet){
   return 0;
 }
 
-/*
+
 //yywrap wraps the rules defined
 int yywrap(void) {
     return 1;
 }
-
+/*
 int main(void) {
 
   //Trie data structure
@@ -325,3 +325,4 @@ int main(void) {
   return 0;
 }
 */
+

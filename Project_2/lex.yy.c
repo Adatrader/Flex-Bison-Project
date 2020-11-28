@@ -564,7 +564,7 @@ char *yytext;
 /* C Headers, Declarations, Vars */
 #include <stdio.h>
 #include <stdbool.h>
-#include "toy_scanner.h"
+#include "toy.tab.h"
 
 int getNextSymbol(char*, int);
 int findFirstEmpty(char*);
@@ -860,258 +860,258 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 43 "toy.l"
-{ printf("%s [shift]", yytext); return(_boolean); }
+{ printf("\n%s [shift]", yytext); return(_boolean); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 44 "toy.l"
-{ printf("%s [shift]", yytext); return(_break); }
+{ printf("\n%s [shift]", yytext); return(_break); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 45 "toy.l"
-{ printf("%s [shift]", yytext); return (_class); }
+{ printf("\n%s [shift]", yytext); return (_class); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 46 "toy.l"
-{ printf("%s [shift]", yytext); return (_double); }
+{ printf("\n%s [shift]", yytext); return (_double); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 47 "toy.l"
-{ printf("%s [shift]", yytext); return (_else); }
+{ printf("\n%s [shift]", yytext); return (_else); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 48 "toy.l"
-{ printf("%s [shift]", yytext); return (_extends); }
+{ printf("\n%s [shift]", yytext); return (_extends); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 49 "toy.l"
-{ printf("%s [shift]", yytext); return (_booleanconstant); }
+{ printf("\n%s [shift]", yytext); return (_booleanconstant); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 50 "toy.l"
-{ printf("%s [shift]", yytext); return (_for); }
+{ printf("\n%s [shift]", yytext); return (_for); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 51 "toy.l"
-{ printf("%s [shift]", yytext); return (_if); }
+{ printf("\n%s [shift]", yytext); return (_if); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 52 "toy.l"
-{ printf("%s [shift]", yytext); return (_implements); }
+{ printf("\n%s [shift]", yytext); return (_implements); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 53 "toy.l"
-{ printf("%s [shift]", yytext); return (_int); }
+{ printf("\n%s [shift]", yytext); return (_int); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 54 "toy.l"
-{ printf("%s [shift]", yytext); return (_interface); }
+{ printf("\n%s [shift]", yytext); return (_interface); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 55 "toy.l"
-{ printf("%s [shift]", yytext); return (_new); }
+{ printf("\n%s [shift]", yytext); return (_new); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 56 "toy.l"
-{ printf("%s [shift]", yytext); return (_newarray); }
+{ printf("\n%s [shift]", yytext); return (_newarray); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 57 "toy.l"
-{ printf("%s [shift]", yytext); return (_null); }
+{ printf("\n%s [shift]", yytext); return (_null); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 58 "toy.l"
-{ printf("%s [shift]", yytext); return (_println); }
+{ printf("\n%s [shift]", yytext); return (_println); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 59 "toy.l"
-{ printf("%s [shift]", yytext); return (_readln); }
+{ printf("\n%s [shift]", yytext); return (_readln); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 60 "toy.l"
-{ printf("%s [shift]", yytext); return (_return); }
+{ printf("\n%s [shift]", yytext); return (_return); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 61 "toy.l"
-{ printf("%s [shift]", yytext); return (_string); }
+{ printf("\n%s [shift]", yytext); return (_string); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 62 "toy.l"
-{ printf("%s [shift]", yytext); return (_this); }
+{ printf("\n%s [shift]", yytext); return (_this); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 63 "toy.l"
-{ printf("%s [shift]", yytext); return (_booleanconstant); }
+{ printf("\n%s [shift]", yytext); return (_booleanconstant); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 64 "toy.l"
-{ printf("%s [shift]", yytext); return (_void); }
+{ printf("\n%s [shift]", yytext); return (_void); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 65 "toy.l"
-{ printf("%s [shift]", yytext); return (_while); }
+{ printf("\n%s [shift]", yytext); return (_while); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 67 "toy.l"
-{ printf("intconstant [shift]"); return(_intconstant); }
+{ printf("\nintconstant [shift]"); return(_intconstant); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 68 "toy.l"
-{ printf("doubleconstant [shift]"); return(_doubleconstant); }
+{ printf("\ndoubleconstant [shift]"); return(_doubleconstant); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 69 "toy.l"
-{ printf("stringconstant [shift]"); return(_stringconstant); }
+{ printf("\nstringconstant [shift]"); return(_stringconstant); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 70 "toy.l"
-{ printf("id [shift]"); return(_id); }
+{ printf("\nid [shift]"); return(_id); }
 	YY_BREAK
 /* Operators */
 case 28:
 YY_RULE_SETUP
 #line 74 "toy.l"
-{ printf("plus [shift]"); return(_plus); }
+{ printf("\nplus [shift]"); return(_plus); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 75 "toy.l"
-{ printf("minus [shift]"); return(_minus); }
+{ printf("\nminus [shift]"); return(_minus); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 76 "toy.l"
-{ printf("multiplication [shift]"); return(_multiplication); }
+{ printf("\nmultiplication [shift]"); return(_multiplication); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 77 "toy.l"
-{ printf("division [shift]"); return(_division); }
+{ printf("\ndivision [shift]"); return(_division); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 78 "toy.l"
-{ printf("mod [shift]"); return(_mod); }
+{ printf("\nmod [shift]"); return(_mod); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 79 "toy.l"
-{ printf("less [shift]"); return(_less); }
+{ printf("\nless [shift]"); return(_less); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 80 "toy.l"
-{ printf("lessequal [shift]"); return(_lessequal); }
+{ printf("\nlessequal [shift]"); return(_lessequal); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 81 "toy.l"
-{ printf("greater [shift]"); return(_greater); }
+{ printf("\ngreater [shift]"); return(_greater); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 82 "toy.l"
-{ printf("greaterequal [shift]"); return(_greaterequal); }
+{ printf("\ngreaterequal [shift]"); return(_greaterequal); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 83 "toy.l"
-{ printf("equal [shift]"); return(_equal); }
+{ printf("\nequal [shift]"); return(_equal); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 84 "toy.l"
-{ printf("notequal [shift]"); return(_notequal); }
+{ printf("\nnotequal [shift]"); return(_notequal); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 85 "toy.l"
-{ printf("and [shift]"); return(_and); }
+{ printf("\nand [shift]"); return(_and); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 86 "toy.l"
-{ printf("or [shift]"); return(_or); }
+{ printf("\nor [shift]"); return(_or); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 87 "toy.l"
-{ printf("not [shift]"); return(_not); }
+{ printf("\nnot [shift]"); return(_not); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 88 "toy.l"
-{ printf("assignop [shift]"); return(_assignop); }
+{ printf("\nassignop [shift]"); return(_assignop); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 89 "toy.l"
-{ printf("semicolon [shift]"); return(_semicolon); }
+{ printf("\nsemicolon [shift]"); return(_semicolon); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 90 "toy.l"
-{ printf("comma [shift]"); return(_comma); }
+{ printf("\ncomma [shift]"); return(_comma); }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
 #line 91 "toy.l"
-{ printf("period [shift]"); return(_period); }
+{ printf("\nperiod [shift]"); return(_period); }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 92 "toy.l"
-{ printf("leftparen [shift]"); return(_leftparen); }
+{ printf("\nleftparen [shift]"); return(_leftparen); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 93 "toy.l"
-{ printf("rightparen [shift]"); return(_rightparen); }
+{ printf("\nrightparen [shift]"); return(_rightparen); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 94 "toy.l"
-{ printf("leftbracket [shift]"); return(_leftbracket); }
+{ printf("\nleftbracket [shift]"); return(_leftbracket); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
 #line 95 "toy.l"
-{ printf("rightbracket [shift]"); return(_rightbracket); }
+{ printf("\nrightbracket [shift]"); return(_rightbracket); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
 #line 96 "toy.l"
-{ printf("leftbrace [shift]"); return(_leftbrace); }
+{ printf("\nleftbrace [shift]"); return(_leftbrace); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
 #line 97 "toy.l"
-{ printf("rightbrace [shift]"); return(_rightbrace); }
+{ printf("\nrightbrace [shift]"); return(_rightbrace); }
 	YY_BREAK
 /* Comments (#9) */
 case 52:
@@ -2320,12 +2320,12 @@ int printSwitch(int* switchArr, char* alphabet){
   return 0;
 }
 
-/*
+
 //yywrap wraps the rules defined
 int yywrap(void) {
     return 1;
 }
-
+/*
 int main(void) {
 
   //Trie data structure
@@ -2370,3 +2370,5 @@ int main(void) {
   return 0;
 }
 */
+
+
