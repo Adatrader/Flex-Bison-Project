@@ -1,8 +1,9 @@
 %{
 /* C Headers, Declarations, Vars */
 #include <stdio.h>
+#include <string.h>
 #include <stdbool.h>
-#include "toy_scanner.h"
+// #include "toy_scanner.h"
 #include "toy.tab.h"
 
 
@@ -56,61 +57,61 @@ multicomment    \/\*[^*]*\*\/\n
 
   /* Keywords (#1)*/
 
-boolean     { printf("%s ", yytext); return(_boolean); }
-break       { printf("%s ", yytext); return(_break); }
-class       { printf("%s ", yytext); return (_class); }
-double      { printf("%s ", yytext); return (_double); }
-else        { printf("%s ", yytext); return (_else); }
-extends     { printf("%s ", yytext); return (_extends); }
-false       { printf("%s ", yytext); return (_booleanconstant); }
-for         { printf("%s ", yytext); return (_for); }
-if          { printf("%s ", yytext); return (_if); }
-implements  { printf("%s ", yytext); return (_implements); }
-int         { printf("%s ", yytext); return (_int); }
-interface   { printf("%s ", yytext); return (_interface); }
-new         { printf("%s ", yytext); return (_new); }
-newarray    { printf("%s ", yytext); return (_newarray); }
-null        { printf("%s ", yytext); return (_null); }
-println     { printf("%s ", yytext); return (_println); }
-readln      { printf("%s ", yytext); return (_readln); }
-return      { printf("%s ", yytext); return (_return); }
-string      { printf("%s ", yytext); return (_string); }
-this        { printf("%s ", yytext); return (_this); }
-true        { printf("%s ", yytext); return (_booleanconstant); }
-void        { printf("%s ", yytext); return (_void); }
-while       { printf("%s ", yytext); return (_while); }
+boolean         {printf("\nboolean [shift]", yytext); return (_boolean);}
+break           {printf("\nbreak [shift]", yytext); return (_break);}
+class           {printf("\nclass [shift]", yytext); return (_class);}
+double          {printf("\ndouble [shift]", yytext); return (_double);}
+else            {printf("\nelse [shift]", yytext); return (_else);}
+extends         {printf("\nextends [shift]", yytext); return (_extends);}
+false           {printf("\nboolconstant [shift]", yytext); return (_booleanconstant);}
+for             {printf("\nfor [shift]", yytext); return (_for);}
+if              {printf("\nif [shift]", yytext); return (_if);}
+implements      {printf("\nimplements [shift]", yytext); return (_implements);}
+int             {printf("\nint [shift]", yytext); return (_int);}
+interface       {printf("\ninterface [shift]", yytext); return (_interface);}
+new             {printf("\nnew [shift]", yytext); return (_new);}
+newarray        {printf("\nnewarray [shift]", yytext); return (_newarray);}
+null            {printf("\nnull [shift]", yytext); return (_null);}
+println         {printf("\nprintln [shift]", yytext); return (_println);}
+readln          {printf("\nreadln [shift]", yytext); return (_readln);}
+return          {printf("\nreturn [shift]", yytext); return (_return);}
+string          {printf("\nstring [shift]", yytext); return (_string);}
+this            {printf("\nthis [shift]", yytext); return (_this); }
+true            {printf("\nboolconstant [shift]", yytext); return (_booleanconstant);}
+void            {printf("\nvoid [shift]", yytext); return (_void);}
+while           {printf("\nwhile [shift]", yytext); return (_while);}
 
-{intconstant}     { printf("intconstant "); return(_intconstant); }
-{doubleconstant}  { printf("doubleconstant "); return(_doubleconstant); }
-{string}          { printf("stringconstant "); return(_stringconstant); }
-{identifier}      { printf("id "); return(_id); }
+{intconstant}       {printf("\nintconstant [shift]", yytext); return (_intconstant);}
+{doubleconstant}    {printf("\ndoubleconstant [shift]", yytext); return (_doubleconstant);}
+{string}            {printf("\nstringconstant [shift]", yytext); return (_stringconstant);}
+{identifier}        {printf("\nid [shift]", yytext); return(_id);}
 
 
   /* Operators */
-"+"             { printf("plus "); return(_plus); }
-"-"             { printf("minus "); return(_minus); }
-"*"             { printf("multiplication "); return(_multiplication); }
-"/"             { printf("division "); return(_division); }
-"%"             { printf("mod "); return(_mod); }
-"<"             { printf("less "); return(_less); }
-"<="            { printf("lessequal "); return(_lessequal); }
-">"             { printf("greater "); return(_greater); }
-">="            { printf("greaterequal "); return(_greaterequal); }
-"=="            { printf("equal "); return(_equal); }
-"!="            { printf("notequal "); return(_notequal); }
-"&&"            { printf("and "); return(_and); }
-"||"            { printf("or "); return(_or); }
-"!"             { printf("not "); return(_not); }
-"="             { printf("assignop "); return(_assignop); }
-";"             { printf("semicolon "); return(_semicolon); }
-","             { printf("comma "); return(_comma); }
-"."             { printf("period "); return(_period); }
-"("             { printf("leftparen "); return(_leftparen); }
-")"             { printf("rightparen "); return(_rightparen); }
-"["             { printf("leftbracket "); return(_leftbracket); }
-"]"             { printf("rightbracket "); return(_rightbracket); }
-"{"             { printf("leftbrace "); return(_leftbrace); }
-"}"             { printf("rightbrace "); return(_rightbrace); }
+"+"             {printf("\nplus [shift]", yytext); return (_plus);}
+"-"             {printf("\nminus [shift]", yytext); return (_minus);}
+"*"             {printf("\nmultiplication [shift]", yytext); return (_multiplication);}
+"/"             {printf("\ndivision [shift]", yytext); return (_division);}
+"%"             {printf("\nmod [shift]", yytext); return (_mod);}
+"<"             {printf("\nless [shift]", yytext); return (_less);}
+"<="            {printf("\nlessequal [shift]", yytext); return (_lessequal);}
+">"             {printf("\ngreater [shift]", yytext); return (_greater);}
+">="            {printf("\ngreaterequal [shift]", yytext); return (_greaterequal);}
+"=="            {printf("\nequal [shift]", yytext); return (_equal);}
+"!="            {printf("\nnotequal [shift]", yytext); return (_notequal);}
+"&&"            {printf("\nand [shift]", yytext); return (_and);}
+"||"            {printf("\nor [shift]", yytext); return (_or);}
+"!"             {printf("\nnot [shift]", yytext); return (_not);}
+"="             {printf("\nassignop [shift]", yytext); return (_assignop);}
+";"             {printf("\nsemicolon [shift]", yytext); return (_semicolon);}
+","             {printf("\ncomma [shift]", yytext); return (_comma);}
+"."             {printf("\nperiod [shift]", yytext); return (_period);}
+"("             {printf("\nleftparen [shift]", yytext); return (_leftparen);}
+")"             {printf("\nrightparen [shift]", yytext); return (_rightparen);}
+"["             {printf("\nleftbracket [shift]", yytext); return (_leftbracket);}
+"]"             {printf("\nrightbracket [shift]", yytext); return (_rightbracket);}
+"{"             {printf("\nleftbrace [shift]", yytext); return (_leftbrace);}
+"}"             {printf("\nrightbrace [shift]", yytext); return (_rightbrace);}
 
   /* Comments (#9) */
 {whitespace}    {;}
@@ -118,7 +119,7 @@ while       { printf("%s ", yytext); return (_while); }
 {multicomment}  {;}
 
   /* Other */
-.               {;}
+.                   {printf("\nerror!\n"); return yytext[0];}
 
 %%
 
