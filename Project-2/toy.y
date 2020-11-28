@@ -120,11 +120,20 @@ FORMALS: VARIABLE MORE_VARIABLE {printf("[reduce 17]");}
 	| EPSILON {printf("[reduce 18]");}
 ;
 
+// rule 8 - c3
+CLASSDECL: _class _id ZOM_EXTENDS ZOM_IMPLEMENTS _leftbrace MORE_FIELD _rightbrace {printf("[reduce 21]");}
+    | _class _id ZOM_EXTENDS ZOM_IMPLEMENTS _leftbrace _rightbrace {printf("[reduce 22]");}
+;
 
-// rule 9 - 
+// rule 9 - c2
 FIELD: VARIABLEDECL {printf("[reduce 31]");}
     | FUNCTIONDECL {printf("[reduce 32]");}
+;
 
+
+// rule 10 -
+INTERFACEDECL: _interface _id _leftbrace ZOM_PROTOTYPE _rightbrace {printf("[reduce 33]");}
+;
 
 // rule 11 - c2
 PROTOTYPE: TYPE _id _leftparen FORMALS _rightparen _semicolon {printf("[reduce 35]");}
@@ -244,6 +253,10 @@ ZOM_VARIABLEDECL: VARIABLEDECL ZOM_VARIABLEDECL {printf("[reduce 39]");}
 ;
 
 
+MORE_ID: _id _comma MORE_ID {printf("[reduce 29]");}
+    | _id {printf("[reduce 30]");}
+;
+
 MORE_EXPR: EXPR _comma MORE_EXPR {printf("[reduce 62]");}
     | EXPR {printf("[reduce 63]");}
 ;
@@ -256,6 +269,21 @@ ZOM_STMT: STMT ZOM_STMT {printf("[reduce 41]");}
 	| EPSILON {printf("[reduce 42]");}
 ;
 
+ZOM_EXTENDS: _extends _id {printf("[reduce 25]");}
+    | EPSILON {printf("[reduce 26]");}
+;
+
+ZOM_IMPLEMENTS: _implements MORE_ID {printf("[reduce 27]");}
+    | EPSILON {printf("[reduce 28]");}
+;
+
+MORE_FIELD: FIELD MORE_ID {printf("[reduce 23]");}
+	| FIELD {printf("[reduce 24]");}
+;
+
+ZOM_PROTOTYPE: PROTOTYPE ZOM_PROTOTYPE {printf("[reduce 34]");}
+    | EPSILON {printf("[reduce 35]");}
+;
 
 UM_IFSTMT: _if _leftparen EXPR _rightbrace STMT {printf("[reduce 55]");}
 ;
