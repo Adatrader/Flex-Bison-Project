@@ -1,11 +1,13 @@
 %{
  
 #include <stdio.h>
-// #include "lex.yy.c"  
+//#include "lex.yy.c"
+//void yyerror(char *s)  
 
 %}
 
 // left, right, nonassoc yacc keywords for operator precedence (highest to lowest) 
+%start PROGRAM
 %right _leftbracket _period
 %right _not _unaryminus // Test if unary minus should be seperate token
 %left _plus _minus
@@ -68,11 +70,6 @@
 %token _booleanconstant
 %token _id
 
-// Bridge between lex and y code 
-%union{
-
-
-}
 
 %%
 // Production rules and actions (Print production number when reducing)
@@ -82,8 +79,6 @@
 '<optional>' = O 
 '*' = M 
 */
-
-START:			PROGRAM {printf("[reduce] \n");}; 
 
 // Production Rule 1
 PROGRAM:		DECLP {printf("[reduce 1] \n");};
