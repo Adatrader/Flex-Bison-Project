@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ../
 rm -f a.out
 rm -f lex.yy.c
 rm -f toy.tab.c
@@ -7,4 +8,4 @@ rm -f toy.output
 flex toy.l
 bison -vd toy.y
 cc lex.yy.c toy.tab.c -lfl
-./a.out < testcases/testcase2.toy
+./a.out < testcases/testcase4.toy

@@ -2,7 +2,7 @@
  
 #include <stdio.h>
 //#include "lex.yy.c"
-void yyerror(char *s); 
+void yyerror(); 
 extern int yylex(); 
 
 %}
@@ -83,26 +83,27 @@ extern int yylex();
 */
 
 // Production Rule 1
-PROGRAM:		DECLP {printf("[reduce 1]\n[accept]");};
+PROGRAM:			DECLP {printf("[reduce 1]\n[accept]\n");};
 
-DECLP:			DECL DECLP {printf("[reduce 2]");}		// Right recursion
+DECLP:				DECL DECLP {printf("[reduce 2]");}	// Right recursion
 			|	DECL {printf("[reduce 3]");};		// Terminal
 
 // Production Rule 2
-DECL:			VARIABLEDECL {printf("[reduce 4]");}
+DECL:				VARIABLEDECL {printf("[reduce 4]");}
 			|	FUNCTIONDECL {printf("[reduce 5]");}
 			| 	CLASSDECL {printf("[reduce 6]");}
 			| 	INTERFACEDECL {printf("[reduce 7]");};
 
 // Production Rule 3
-VARIABLEDECL: 		VARIABLE _semicolon {printf("[reduce 8]");};
+VARIABLEDECL: 			VARIABLE _semicolon {printf("[reduce 8]");}
+			|	TYPE _id _assignop CONSTANT;
 
 // Production Rule 4
-VARIABLE:		TYPE _id {printf("[reduce 9]");}
-			| TYPE _id _assignop CONSTANT;
+VARIABLE:			TYPE _id {printf("[reduce 9]");};
+			
 
 // Production Rule 5
-TYPE:			_int {printf("[reduce 10]");}
+TYPE:				_int {printf("[reduce 10]");}
 			|	_double {printf("[reduce 11]");}
 			|	_boolean {printf("[reduce 12]");}
 			|	_string {printf("[reduce 13]");}
@@ -110,15 +111,15 @@ TYPE:			_int {printf("[reduce 10]");}
 			|	_id {printf("[reduce 15]");};
 
 // Production Rule 6
-FUNCTIONDECL: 	TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 16]");}
+FUNCTIONDECL: 			TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 16]");}
 			|	_void _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 17]");};
 
 // Production Rule 7
-FORMALS: 		VARIABLEPC {printf("[reduce 18]");}
-			|	{printf("[reduce 19]");}; 			// Epsilon
+FORMALS: 			VARIABLEPC {printf("[reduce 18]");}
+			|	{printf("[reduce 19]");}; 		// Epsilon
 			
 VARIABLEPC: 	
-				_comma VARIABLE VARIABLEPC	{printf("[reduce 20]");}// One or more comma seperated
+				_comma VARIABLE VARIABLEPC	{printf("[reduce 20]");} // One or more comma seperated
 			|	VARIABLE VARIABLEPC 
 			|	{printf("[reduce 21]");};		// Terminal
 // Production Rule 8
@@ -128,13 +129,13 @@ CLASSDECLO:
 				_extends _id {printf("[reduce 23]");}
 			|	_implements IDPC {printf("[reduce 24]");}
 			|	_extends _id _implements IDPC {printf("[reduce 25]");}
-			|	{printf("[reduce 26]");};			// Epsilon
+			|	{printf("[reduce 26]");};		// Epsilon
 IDPC:
 				_id _comma IDPC {printf("[reduce 27]");} // One or more comma seperated
 			|	_id {printf("[reduce 28]");};
 FIELDM:
 				FIELD FIELDM {printf("[reduce 29]");}
-			|	{printf("[reduce 30]");};			// Epsilon
+			|	{printf("[reduce 30]");};		// Epsilon
 
 // Production Rule 9
 FIELD:
@@ -145,8 +146,8 @@ FIELD:
 INTERFACEDECL:
 				_interface _id _leftbrace PROTOTYPEM _rightbrace {printf("[reduce 33]");};
 PROTOTYPEM:
-				PROTOTYPE PROTOTYPEM {printf("[reduce 34]");}// Right recursion
-			|	{printf("[reduce 35]");};			// Epsilon
+				PROTOTYPE PROTOTYPEM {printf("[reduce 34]");} // Right recursion
+			|	{printf("[reduce 35]");};		// Epsilon
 
 // Production Rule 11 
 PROTOTYPE:
@@ -157,11 +158,11 @@ PROTOTYPE:
 STMTBLOCK:
 				_leftbrace VARIABLEDECLM STMTM _rightbrace {printf("[reduce 38]");} ;
 VARIABLEDECLM:
-				VARIABLEDECL VARIABLEDECLM {printf("[reduce 39]");}// Right recursion
-			|	{printf("[reduce 40]");};			// Epsilon
+				VARIABLEDECL VARIABLEDECLM {printf("[reduce 39]");} // Right recursion
+			|	{printf("[reduce 40]");};		// Epsilon
 STMTM:
 				STMT STMTM {printf("[reduce 41]");} // Right recursion
-			|	{printf("[reduce 42]");};			// Epsilon
+			|	{printf("[reduce 42]");};		// Epsilon
 
 // Production Rule 13
 STMT:
@@ -175,14 +176,14 @@ STMT:
 			|	STMTBLOCK {printf("[reduce 50]");};
 EXPRO:
 				EXPR {printf("[reduce 51]");}
-			|	{printf("[reduce 52]");};			// Epsilon
+			|	{printf("[reduce 52]");};		// Epsilon
 
 // Production Rule 14
 IFSTMT:
 				_if _leftparen EXPR _rightparen STMT ELSESTMTO {printf("[reduce 53]");};
 ELSESTMTO:
 				_else STMT {printf("[reduce 54]");}
-			|	{printf("[reduce 55]");};			// Epsilon
+			|	{printf("[reduce 55]");};		// Epsilon
 
 // Production Rule 15
 WHILESTMT:
@@ -204,8 +205,8 @@ RETURNSTMT:
 PRINTSTMT:
 				_println _leftparen EXPRPC _rightparen _semicolon {printf("[reduce 60]");};
 EXPRPC:
-				EXPR _comma EXPRPC {printf("[reduce 61]");}// One or more comma seperated
-			|	EXPR {printf("[reduce 62]");};			// Terminal
+				EXPR _comma EXPRPC {printf("[reduce 61]");} // One or more comma seperated
+			|	EXPR {printf("[reduce 62]");};		// Terminal
 
 // Production Rule 20
 EXPR:
@@ -259,8 +260,8 @@ CONSTANT:
 
 %%
 
-void yyerror(char *s) {
- fprintf(stderr, "%s\n", s);
+void yyerror() {
+ printf("\n[reject]\n");
 }
 
 int main(){

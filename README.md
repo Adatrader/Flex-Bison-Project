@@ -8,11 +8,13 @@ Ta Wei Chien
 
 ## Run Project One
 
-apt-get install flex bison<br/>
+sudo apt-get install flex bison<br/>
+Open terminal in project directory<br/>
 
 Shell script:<br/>
 
 ```
+cd Project_1
 chmod +x runSampleGiven.sh
 ./runSampleGiven.sh
 ```
@@ -20,15 +22,21 @@ chmod +x runSampleGiven.sh
 <br/> or <br/>
 
 ```
+cd Project_1
 flex toy.l
 cc lex.yy.c
 ./a.out < sampleGiven.toy
 ```
 
 ## Run Project Two
+
+sudo apt-get install flex bison<br/>
+Open terminal in project directory<br/>
+
 Shell script:<br/>
 
 ```
+cd Project_2/runTestcases
 chmod +x runTestcase1.sh
 ./runTestcase1.sh
 ```
