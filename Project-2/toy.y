@@ -123,6 +123,11 @@ PROTOTYPE: TYPE _id _leftparen FORMALS _rightparen _semicolon {printf("[reduce 3
 
 
 // rule 12 - 
+STMTBLOCK: _leftbrace ZOM_VARIABLEDECL ZOM_STMT _rightbrace {printf("[reduce 38]");}
+;
+
+
+// rule 13 - c8
 STMT: ZOM_EXPR _semicolon {printf("[reduce 43]");}
 	| IFSTMT {printf("[reduce 44]");}
 	| WHILESTMT {printf("[reduce 45]");}
@@ -130,6 +135,7 @@ STMT: ZOM_EXPR _semicolon {printf("[reduce 43]");}
 	| BREAKSTMT {printf("[reduce 47]");}
 	| RETURNSTMT {printf("[reduce 48]");}
 	| PRINTSTMT {printf("[reduce 49]");}
+	| STMTBLOCK {printf("[reduce 50]");}
 ;
 
 
@@ -223,6 +229,11 @@ MORE_VARIABLE: _comma VARIABLE MORE_VARIABLE {printf("[reduce 19]");}
 	| EPSILON {printf("[reduce 20]");}
 ;
 
+ZOM_VARIABLEDECL: VARIABLEDECL ZOM_VARIABLEDECL {printf("[reduce 39]");}
+				| EPSILON {printf("[reduce 40]");}
+;
+
+
 MORE_EXPR: EXPR _comma MORE_EXPR {printf("[reduce 62]");}
     | EXPR {printf("[reduce 63]");}
 ;
@@ -230,6 +241,11 @@ MORE_EXPR: EXPR _comma MORE_EXPR {printf("[reduce 62]");}
 ZOM_EXPR: EXPR {printf("[reduce 51]");}
 	| EPSILON {printf("[reduce 52]");}
 ;
+
+ZOM_STMT: STMT ZOM_STMT {printf("[reduce 41]");}
+	| EPSILON {printf("[reduce 42]");}
+;
+
 
 UM_IFSTMT: _if _leftparen EXPR _rightbrace STMT {printf("[reduce 55]");}
 ;
