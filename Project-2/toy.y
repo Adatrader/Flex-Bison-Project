@@ -110,7 +110,7 @@ TYPE: _int {printf("[reduce 9]");}
  ;
 
 
-// rule 6 
+// rule 6 - c2
 FUNCTIONDECL: TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 15]");}
     | _void _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 16]");}
 ;
@@ -119,6 +119,11 @@ FUNCTIONDECL: TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce
 FORMALS: VARIABLE MORE_VARIABLE {printf("[reduce 17]");}
 	| EPSILON {printf("[reduce 18]");}
 ;
+
+
+// rule 9 - 
+FIELD: VARIABLEDECL {printf("[reduce 31]");}
+    | FUNCTIONDECL {printf("[reduce 32]");}
 
 
 // rule 11 - c2
