@@ -8,7 +8,7 @@ extern int yylex();
 %}
 
 // left, right, nonassoc yacc keywords for operator precedence (highest to lowest) 
-%start PROGRAM
+%start START
 %right _leftbracket _period
 %right _not _unaryminus // Test if unary minus should be seperate token
 %left _plus _minus
@@ -82,8 +82,10 @@ extern int yylex();
 '*' = M 
 */
 
+START:
+				PROGRAM {printf("\n[accept]\n");};
 // Production Rule 1
-PROGRAM:			DECLP {printf("[reduce 1]\n[accept]\n");};
+PROGRAM:			DECLP {printf("[reduce 1]");};
 
 DECLP:				DECL DECLP {printf("[reduce 2]");}	// Right recursion
 			|	DECL {printf("[reduce 3]");};		// Terminal

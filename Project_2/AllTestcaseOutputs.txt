@@ -1,0 +1,248 @@
+=========== Test Case 1 ===========
+
+void [shift]
+id [shift]
+leftparen [shift]
+double [shift][reduce 11]
+id [shift][reduce 9]
+comma [shift]
+double [shift][reduce 11]
+id [shift][reduce 9]
+rightparen [shift][reduce 21][reduce 20][reduce 18]
+leftbrace [shift]
+rightbrace [shift][reduce 40][reduce 42][reduce 38][reduce 17][reduce 5]
+[reduce 3][reduce 1]
+[accept]
+
+===================================
+
+=========== Test Case 2 ===========
+
+int [shift][reduce 10]
+id [shift]
+assignop [shift]
+intconstant [shift][reduce 93][reduce 4]
+semicolon [shift][reduce 3][reduce 1]
+[accept]
+
+[reject]
+
+===================================
+
+=========== Test Case 3 ===========
+
+id [shift][reduce 15]
+assignop [shift]
+[reject]
+
+===================================
+
+=========== Test Case 4 ===========
+
+id [shift][reduce 15]
+assignop [shift]
+[reject]
+
+===================================
+
+=========== Test Case 5 ===========
+
+id [shift][reduce 15]
+assignop [shift]
+[reject]
+
+===================================
+
+=========== Test Case 6 ===========
+
+int [shift][reduce 10]
+leftbracket [shift]
+rightbracket [shift][reduce 14]
+leftbracket [shift]
+rightbracket [shift][reduce 14]
+leftbracket [shift]
+rightbracket [shift][reduce 14]
+id [shift]
+semicolon [shift][reduce 9][reduce 8][reduce 4]
+[reduce 3][reduce 1]
+[accept]
+
+===================================
+
+=========== Test Case 7 ===========
+
+id [shift][reduce 15]
+leftbracket [shift]
+intconstant [shift]
+[reject]
+
+===================================
+
+=========== Test Case 8 ===========
+
+for [shift]
+[reject]
+
+===================================
+
+=========== Test Case 9 ===========
+
+if [shift]
+[reject]
+
+===================================
+
+=========== Test Case 10 ===========
+
+boolean [shift][reduce 12]
+id [shift]
+semicolon [shift][reduce 9][reduce 8][reduce 4]
+
+id [shift][reduce 15]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 19]
+leftbrace [shift]
+rightbrace [shift][reduce 40][reduce 42][reduce 38][reduce 16][reduce 5]
+
+double [shift][reduce 11]
+id [shift]
+semicolon [shift][reduce 9][reduce 8][reduce 4]
+
+string [shift][reduce 13]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 19]
+leftbrace [shift]
+rightbrace [shift][reduce 40][reduce 42][reduce 38][reduce 16][reduce 5]
+[reduce 3][reduce 2][reduce 2][reduce 2][reduce 1]
+[accept]
+
+===================================
+
+=========== Test Case 11 ===========
+
+int [shift][reduce 10]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 19]
+leftbrace [shift]
+
+class [shift][reduce 40][reduce 42]
+[reject]
+
+===================================
+
+=========== Test Case 12 ===========
+
+class [shift]
+id [shift]
+leftbrace [shift][reduce 26]
+
+int [shift][reduce 10]
+id [shift]
+semicolon [shift][reduce 9][reduce 8][reduce 31]
+
+double [shift][reduce 11]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 19]
+leftbrace [shift]
+this [shift][reduce 40][reduce 66]
+period [shift][reduce 51]
+[reject]
+
+===================================
+
+=========== Test Case 13 ===========
+
+int [shift][reduce 10]
+id [shift]
+leftparen [shift]
+int [shift][reduce 10]
+id [shift][reduce 9]
+rightparen [shift][reduce 21][reduce 18]
+leftbrace [shift]
+
+if [shift][reduce 40]
+leftparen [shift]
+id [shift]
+greater [shift][reduce 86][reduce 65]
+intconstant [shift][reduce 93][reduce 64]
+rightparen [shift][reduce 77]
+return [shift]
+id [shift]
+multiplication [shift][reduce 86][reduce 65]
+id [shift]
+leftparen [shift]
+id [shift]
+minus [shift][reduce 86][reduce 65]
+intconstant [shift][reduce 93][reduce 64]
+rightparen [shift][reduce 70][reduce 62][reduce 91][reduce 89][reduce 67]
+semicolon [shift][reduce 71][reduce 51][reduce 59][reduce 48]
+
+else [shift]
+return [shift]
+intconstant [shift][reduce 93][reduce 64]
+semicolon [shift][reduce 51][reduce 59][reduce 48][reduce 54][reduce 53][reduce 44]
+
+rightbrace [shift][reduce 42][reduce 41][reduce 38][reduce 16][reduce 5]
+
+
+void [shift]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 19]
+leftbrace [shift]
+
+division [shift][reduce 40][reduce 42]
+[reject]
+
+===================================
+
+=========== Test Case 14 ===========
+
+int [shift][reduce 10]
+id [shift]
+leftparen [shift]
+int [shift][reduce 10]
+id [shift][reduce 9]
+rightparen [shift][reduce 21][reduce 18]
+leftbrace [shift]
+
+if [shift][reduce 40]
+leftparen [shift]
+id [shift]
+greater [shift][reduce 86][reduce 65]
+intconstant [shift][reduce 93][reduce 64]
+rightparen [shift][reduce 77]
+return [shift]
+id [shift]
+multiplication [shift][reduce 86][reduce 65]
+id [shift]
+leftparen [shift]
+id [shift]
+minus [shift][reduce 86][reduce 65]
+intconstant [shift][reduce 93][reduce 64]
+rightparen [shift][reduce 70][reduce 62][reduce 91][reduce 89][reduce 67]
+semicolon [shift][reduce 71][reduce 51][reduce 59][reduce 48]
+
+else [shift]
+return [shift]
+intconstant [shift][reduce 93][reduce 64]
+semicolon [shift][reduce 51][reduce 59][reduce 48][reduce 54][reduce 53][reduce 44]
+
+rightbrace [shift][reduce 42][reduce 41][reduce 38][reduce 16][reduce 5]
+
+
+void [shift]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 19]
+leftbrace [shift]
+
+division [shift][reduce 40][reduce 42]
+[reject]
+
+===================================
+

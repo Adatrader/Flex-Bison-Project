@@ -36,14 +36,15 @@ Open terminal in project directory<br/>
 Shell script:<br/>
 
 ```
-cd Project_2/runTestcases
-chmod +x runTestcase1.sh
-./runTestcase1.sh
+cd Project_2
+chmod +x runAllTestcases.sh
+./runAllTestcases.sh
 ```
 
 <br/> or <br/>
 
 ```
+cd Project_2
 flex toy.1
 bison -vd toy.y
 cc lex.yy.c toy.tab.c -lfl
