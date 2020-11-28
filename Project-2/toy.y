@@ -127,10 +127,49 @@ BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
 ;
 
 
+// rule 20 - 
+EXPR: LVALUE _assignop EXPR {printf("[reduce 64]");}
+ 	| CONSTANT {printf("[reduce 65]");}
+ 	| LVALUE {printf("[reduce 66]");}
+ 	| _this {printf("[reduce 66]");}
+ 	| CALL {printf("[reduce 67]");}
+ 	| _leftparen EXPR _rightparen  {printf("[reduce 68]");}
+ 	| EXPR _plus EXPR {printf("[reduce 69]");}
+ 	| EXPR _minus EXPR {printf("[reduce 70]");}
+ 	| EXPR _multiplication EXPR {printf("[reduce 71]");}
+ 	| EXPR _division EXPR {printf("[reduce 72]");}
+ 	| EXPR _mod EXPR {printf("[reduce 73]");}
+ 	| _minus EXPR %prec _unaryminus {printf("[reduce 74]");}
+ 	| EXPR _less EXPR {printf("[reduce 75]");}
+ 	| EXPR _lessequal EXPR {printf("[reduce 76]");}
+ 	| EXPR _greater EXPR {printf("[reduce 77]");}
+ 	| EXPR _greaterequal EXPR {printf("[reduce 78]");}
+ 	| EXPR _equal EXPR {printf("[reduce 79]");}
+ 	| EXPR _notequal EXPR {printf("[reduce 80]");}
+ 	| EXPR _and EXPR {printf("[reduce 81]");}
+ 	| EXPR _or EXPR {printf("[reduce 82]");}
+ 	| _not EXPR {printf("[reduce 83]");}
+ 	| _readln _leftparen _rightparen {printf("[reduce 84]");}
+ 	| _new _leftparen _id _rightparen {printf("[reduce 84]");}
+ 	| _newarray _leftparen _intconstant _comma TYPE _rightparen {printf("[reduce 85]");}
+;
+
 // rule 21 - c1
 LVALUE: _id {printf("[reduce 86]");}
  	| LVALUE _leftbracket EXPR _rightbracket {printf("[reduce 96]");}
  	| LVALUE _leftparen EXPR _rightparen {printf("[reduce 88]");}
+;
+
+
+// rule 22
+CALL: _id _leftparen ACTUALS _rightparen {printf("[reduce 89]");}
+	| _id _period _id _leftparen ACTUALS _rightparen {printf("[reduce 90]");}
+;
+
+
+// rule 23 - c2
+ACTUALS: MORE_EXPR {printf("[reduce 100]");}
+    | EPSILON {printf("[reduce 101]");}
 ;
 
 
@@ -142,13 +181,16 @@ CONSTANT: _intconstant {printf("[reduce 93]");}
 	| _null {printf("[reduce 96]");}
 ;
 
-/* minor rules */
+/* ------------------------------------- minor rules ------------------------------------- */
 EPSILON: {printf("[reduce 97]");}
 ;
 
 MORE_VARIABLE: _comma VARIABLE MORE_VARIABLE {printf("[reduce 19]");}
 	| EPSILON {printf("[reduce 20]");}
 ;
+
+MORE_EXPR: EXPR _comma MORE_EXPR {printf("[reduce 62]");}
+    | EXPR {printf("[reduce 63]");}
 
 %%
 
