@@ -1,7 +1,8 @@
 %{
  
 #include <stdio.h>
-// #include "lex.yy.c"  
+//#include "lex.yy.c"
+//void yyerror(char *s)  
 
 %}
 
@@ -69,11 +70,6 @@
 %token _booleanconstant
 %token _id
 
-// Bridge between lex and y code 
-%union{
-
-
-}
 
 %%
 // Production rules and actions (Print production number when reducing)
