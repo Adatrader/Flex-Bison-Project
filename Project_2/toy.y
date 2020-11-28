@@ -6,6 +6,7 @@
 %}
 
 // left, right, nonassoc yacc keywords for operator precedence (highest to lowest) 
+%start PROGRAM
 %right _leftbracket _period
 %right _not _unaryminus // Test if unary minus should be seperate token
 %left _plus _minus
@@ -82,8 +83,6 @@
 '<optional>' = O 
 '*' = M 
 */
-
-START:			PROGRAM {printf("[reduce] \n");}; 
 
 // Production Rule 1
 PROGRAM:		DECLP {printf("[reduce 1] \n");};

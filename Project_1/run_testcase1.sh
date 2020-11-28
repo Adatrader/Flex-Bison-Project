@@ -3,4 +3,4 @@ rm -f a.out
 rm -f lex.yy.c
 flex toy.l
 cc lex.yy.c
-./a.out < testcases_proj1/testcase1.toy
+./a.out < testcases/testcase1.toy

@@ -13,8 +13,8 @@ apt-get install flex bison<br/>
 Shell script:<br/>
 
 ```
-chmod +x runSampleGiven_proj1.sh
-./runSampleGiven_proj1.sh
+chmod +x runSampleGiven.sh
+./runSampleGiven.sh
 ```
 
 <br/> or <br/>
@@ -26,10 +26,18 @@ cc lex.yy.c
 ```
 
 ## Run Project Two
+Shell script:<br/>
+
+```
+chmod +x runTestcase1.sh
+./runTestcase1.sh
+```
+
+<br/> or <br/>
 
 ```
 flex toy.1
-bison toy.y
-cc lex.yy.c y.tab.h -ll
-./a.out < testcases_proj2/testCase1.toy
+bison -vd toy.y
+cc lex.yy.c toy.tab.c -lfl
+./a.out < testcases/testcase1.toy
 ```
