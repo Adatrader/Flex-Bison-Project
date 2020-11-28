@@ -71,10 +71,11 @@
  
 #include <stdio.h>
 //#include "lex.yy.c"
-//void yyerror(char *s)  
+void yyerror(char *s); 
+extern int yylex(); 
 
 
-#line 78 "toy.tab.c"
+#line 79 "toy.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -553,18 +554,18 @@ static const yytype_int8 yytranslate[] =
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
-static const yytype_uint8 yyrline[] =
+static const yytype_int16 yyrline[] =
 {
-       0,    84,    84,    86,    87,    90,    91,    92,    93,    96,
-      99,   102,   103,   104,   105,   106,   107,   110,   111,   114,
-     115,   118,   119,   122,   124,   125,   126,   127,   129,   130,
-     132,   133,   137,   138,   142,   144,   145,   149,   150,   154,
-     156,   157,   159,   160,   164,   165,   166,   167,   168,   169,
-     170,   171,   173,   174,   178,   180,   181,   185,   189,   193,
-     197,   201,   203,   204,   208,   209,   210,   211,   212,   213,
-     214,   215,   216,   217,   218,   219,   220,   221,   222,   223,
-     224,   225,   226,   227,   228,   229,   230,   234,   235,   236,
-     240,   241,   245,   246,   250,   251,   252,   253,   254
+       0,    86,    86,    88,    89,    92,    93,    94,    95,    98,
+     101,   104,   105,   106,   107,   108,   109,   112,   113,   116,
+     117,   120,   121,   124,   126,   127,   128,   129,   131,   132,
+     134,   135,   139,   140,   144,   146,   147,   151,   152,   156,
+     158,   159,   161,   162,   166,   167,   168,   169,   170,   171,
+     172,   173,   175,   176,   180,   182,   183,   187,   191,   195,
+     199,   203,   205,   206,   210,   211,   212,   213,   214,   215,
+     216,   217,   218,   219,   220,   221,   222,   223,   224,   225,
+     226,   227,   228,   229,   230,   231,   232,   236,   237,   238,
+     242,   243,   247,   248,   252,   253,   254,   255,   256
 };
 #endif
 
@@ -1519,589 +1520,589 @@ yyreduce:
   switch (yyn)
     {
   case 2:
-#line 84 "toy.y"
+#line 86 "toy.y"
                               {printf("[reduce 1] \n");}
-#line 1525 "toy.tab.c"
+#line 1526 "toy.tab.c"
     break;
 
   case 3:
-#line 86 "toy.y"
+#line 88 "toy.y"
                                    {printf("[reduce 2] \n");}
-#line 1531 "toy.tab.c"
+#line 1532 "toy.tab.c"
     break;
 
   case 4:
-#line 87 "toy.y"
+#line 89 "toy.y"
                                      {printf("[reduce 3] \n");}
-#line 1537 "toy.tab.c"
+#line 1538 "toy.tab.c"
     break;
 
   case 5:
-#line 90 "toy.y"
+#line 92 "toy.y"
                                      {printf("[reduce 4] \n");}
-#line 1543 "toy.tab.c"
+#line 1544 "toy.tab.c"
     break;
 
   case 6:
-#line 91 "toy.y"
+#line 93 "toy.y"
                                              {printf("[reduce 5] \n");}
-#line 1549 "toy.tab.c"
+#line 1550 "toy.tab.c"
     break;
 
   case 7:
-#line 92 "toy.y"
+#line 94 "toy.y"
                                           {printf("[reduce 6] \n");}
-#line 1555 "toy.tab.c"
+#line 1556 "toy.tab.c"
     break;
 
   case 8:
-#line 93 "toy.y"
+#line 95 "toy.y"
                                               {printf("[reduce 7] \n");}
-#line 1561 "toy.tab.c"
+#line 1562 "toy.tab.c"
     break;
 
   case 9:
-#line 96 "toy.y"
+#line 98 "toy.y"
                                     {printf("[reduce 8] \n");}
-#line 1567 "toy.tab.c"
+#line 1568 "toy.tab.c"
     break;
 
   case 10:
-#line 99 "toy.y"
+#line 101 "toy.y"
                                  {printf("[reduce 9] \n");}
-#line 1573 "toy.tab.c"
+#line 1574 "toy.tab.c"
     break;
 
   case 11:
-#line 102 "toy.y"
+#line 104 "toy.y"
                              {printf("[reduce 10] \n");}
-#line 1579 "toy.tab.c"
+#line 1580 "toy.tab.c"
     break;
 
   case 12:
-#line 103 "toy.y"
+#line 105 "toy.y"
                                         {printf("[reduce 11] \n");}
-#line 1585 "toy.tab.c"
+#line 1586 "toy.tab.c"
     break;
 
   case 13:
-#line 104 "toy.y"
+#line 106 "toy.y"
                                          {printf("[reduce 12] \n");}
-#line 1591 "toy.tab.c"
+#line 1592 "toy.tab.c"
     break;
 
   case 14:
-#line 105 "toy.y"
+#line 107 "toy.y"
                                         {printf("[reduce 13] \n");}
-#line 1597 "toy.tab.c"
+#line 1598 "toy.tab.c"
     break;
 
   case 15:
-#line 106 "toy.y"
+#line 108 "toy.y"
                                                                 {printf("[reduce 14] \n");}
-#line 1603 "toy.tab.c"
+#line 1604 "toy.tab.c"
     break;
 
   case 16:
-#line 107 "toy.y"
+#line 109 "toy.y"
                                     {printf("[reduce 15] \n");}
-#line 1609 "toy.tab.c"
+#line 1610 "toy.tab.c"
     break;
 
   case 17:
-#line 110 "toy.y"
+#line 112 "toy.y"
                                                                   {printf("[reduce 16] \n");}
-#line 1615 "toy.tab.c"
+#line 1616 "toy.tab.c"
     break;
 
   case 18:
-#line 111 "toy.y"
+#line 113 "toy.y"
                                                                                    {printf("[reduce 17] \n");}
-#line 1621 "toy.tab.c"
+#line 1622 "toy.tab.c"
     break;
 
   case 19:
-#line 114 "toy.y"
+#line 116 "toy.y"
                                    {printf("[reduce 18] \n");}
-#line 1627 "toy.tab.c"
+#line 1628 "toy.tab.c"
     break;
 
   case 20:
-#line 115 "toy.y"
+#line 117 "toy.y"
                                 {printf("[reduce 19] \n");}
-#line 1633 "toy.tab.c"
+#line 1634 "toy.tab.c"
     break;
 
   case 21:
-#line 118 "toy.y"
+#line 120 "toy.y"
                                                         {printf("[reduce 20] \n");}
-#line 1639 "toy.tab.c"
+#line 1640 "toy.tab.c"
     break;
 
   case 22:
-#line 119 "toy.y"
+#line 121 "toy.y"
                                          {printf("[reduce 21] \n");}
-#line 1645 "toy.tab.c"
+#line 1646 "toy.tab.c"
     break;
 
   case 23:
-#line 122 "toy.y"
+#line 124 "toy.y"
                                                                                     {printf("[reduce 22] \n");}
-#line 1651 "toy.tab.c"
+#line 1652 "toy.tab.c"
     break;
 
   case 24:
-#line 124 "toy.y"
+#line 126 "toy.y"
                                              {printf("[reduce 23] \n");}
-#line 1657 "toy.tab.c"
+#line 1658 "toy.tab.c"
     break;
 
   case 25:
-#line 125 "toy.y"
+#line 127 "toy.y"
                                                  {printf("[reduce 24] \n");}
-#line 1663 "toy.tab.c"
+#line 1664 "toy.tab.c"
     break;
 
   case 26:
-#line 126 "toy.y"
+#line 128 "toy.y"
                                                               {printf("[reduce 25] \n");}
-#line 1669 "toy.tab.c"
+#line 1670 "toy.tab.c"
     break;
 
   case 27:
-#line 127 "toy.y"
+#line 129 "toy.y"
                                 {printf("[reduce 26] \n");}
-#line 1675 "toy.tab.c"
+#line 1676 "toy.tab.c"
     break;
 
   case 28:
-#line 129 "toy.y"
+#line 131 "toy.y"
                                                 {printf("[reduce 27] \n");}
-#line 1681 "toy.tab.c"
+#line 1682 "toy.tab.c"
     break;
 
   case 29:
-#line 130 "toy.y"
+#line 132 "toy.y"
                                     {printf("[reduce 28] \n");}
-#line 1687 "toy.tab.c"
+#line 1688 "toy.tab.c"
     break;
 
   case 30:
-#line 132 "toy.y"
+#line 134 "toy.y"
                                              {printf("[reduce 29] \n");}
-#line 1693 "toy.tab.c"
+#line 1694 "toy.tab.c"
     break;
 
   case 31:
-#line 133 "toy.y"
+#line 135 "toy.y"
                                 {printf("[reduce 30] \n");}
-#line 1699 "toy.tab.c"
+#line 1700 "toy.tab.c"
     break;
 
   case 32:
-#line 137 "toy.y"
+#line 139 "toy.y"
                                              {printf("[reduce 31] \n");}
-#line 1705 "toy.tab.c"
+#line 1706 "toy.tab.c"
     break;
 
   case 33:
-#line 138 "toy.y"
+#line 140 "toy.y"
                                              {printf("[reduce 32] \n");}
-#line 1711 "toy.tab.c"
+#line 1712 "toy.tab.c"
     break;
 
   case 34:
-#line 142 "toy.y"
+#line 144 "toy.y"
                                                                                  {printf("[reduce 33] \n");}
-#line 1717 "toy.tab.c"
+#line 1718 "toy.tab.c"
     break;
 
   case 35:
-#line 144 "toy.y"
+#line 146 "toy.y"
                                                      {printf("[reduce 34] \n");}
-#line 1723 "toy.tab.c"
+#line 1724 "toy.tab.c"
     break;
 
   case 36:
-#line 145 "toy.y"
+#line 147 "toy.y"
                                 {printf("[reduce 35] \n");}
-#line 1729 "toy.tab.c"
+#line 1730 "toy.tab.c"
     break;
 
   case 37:
-#line 149 "toy.y"
+#line 151 "toy.y"
                                                                                    {printf("[reduce 36] \n");}
-#line 1735 "toy.tab.c"
+#line 1736 "toy.tab.c"
     break;
 
   case 38:
-#line 150 "toy.y"
+#line 152 "toy.y"
                                                                                     {printf("[reduce 37] \n");}
-#line 1741 "toy.tab.c"
+#line 1742 "toy.tab.c"
     break;
 
   case 39:
-#line 154 "toy.y"
+#line 156 "toy.y"
                                                                            {printf("[reduce 38] \n");}
-#line 1747 "toy.tab.c"
+#line 1748 "toy.tab.c"
     break;
 
   case 40:
-#line 156 "toy.y"
+#line 158 "toy.y"
                                                            {printf("[reduce 39] \n");}
-#line 1753 "toy.tab.c"
+#line 1754 "toy.tab.c"
     break;
 
   case 41:
-#line 157 "toy.y"
+#line 159 "toy.y"
                                 {printf("[reduce 40] \n");}
-#line 1759 "toy.tab.c"
+#line 1760 "toy.tab.c"
     break;
 
   case 42:
-#line 159 "toy.y"
+#line 161 "toy.y"
                                            {printf("[reduce 41] \n");}
-#line 1765 "toy.tab.c"
+#line 1766 "toy.tab.c"
     break;
 
   case 43:
-#line 160 "toy.y"
+#line 162 "toy.y"
                                 {printf("[reduce 42] \n");}
-#line 1771 "toy.tab.c"
+#line 1772 "toy.tab.c"
     break;
 
   case 44:
-#line 164 "toy.y"
+#line 166 "toy.y"
                                                  {printf("[reduce 43] \n");}
-#line 1777 "toy.tab.c"
+#line 1778 "toy.tab.c"
     break;
 
   case 45:
-#line 165 "toy.y"
+#line 167 "toy.y"
                                        {printf("[reduce 44] \n");}
-#line 1783 "toy.tab.c"
+#line 1784 "toy.tab.c"
     break;
 
   case 46:
-#line 166 "toy.y"
+#line 168 "toy.y"
                                           {printf("[reduce 45] \n");}
-#line 1789 "toy.tab.c"
+#line 1790 "toy.tab.c"
     break;
 
   case 47:
-#line 167 "toy.y"
+#line 169 "toy.y"
                                         {printf("[reduce 46] \n");}
-#line 1795 "toy.tab.c"
+#line 1796 "toy.tab.c"
     break;
 
   case 48:
-#line 168 "toy.y"
+#line 170 "toy.y"
                                           {printf("[reduce 47] \n");}
-#line 1801 "toy.tab.c"
+#line 1802 "toy.tab.c"
     break;
 
   case 49:
-#line 169 "toy.y"
+#line 171 "toy.y"
                                            {printf("[reduce 48] \n");}
-#line 1807 "toy.tab.c"
+#line 1808 "toy.tab.c"
     break;
 
   case 50:
-#line 170 "toy.y"
+#line 172 "toy.y"
                                           {printf("[reduce 49] \n");}
-#line 1813 "toy.tab.c"
+#line 1814 "toy.tab.c"
     break;
 
   case 51:
-#line 171 "toy.y"
+#line 173 "toy.y"
                                           {printf("[reduce 50] \n");}
-#line 1819 "toy.tab.c"
+#line 1820 "toy.tab.c"
     break;
 
   case 52:
-#line 173 "toy.y"
+#line 175 "toy.y"
                                      {printf("[reduce 51] \n");}
-#line 1825 "toy.tab.c"
+#line 1826 "toy.tab.c"
     break;
 
   case 53:
-#line 174 "toy.y"
+#line 176 "toy.y"
                                 {printf("[reduce 52] \n");}
-#line 1831 "toy.tab.c"
+#line 1832 "toy.tab.c"
     break;
 
   case 54:
-#line 178 "toy.y"
+#line 180 "toy.y"
                                                                                {printf("[reduce 53] \n");}
-#line 1837 "toy.tab.c"
+#line 1838 "toy.tab.c"
     break;
 
   case 55:
-#line 180 "toy.y"
+#line 182 "toy.y"
                                            {printf("[reduce 54] \n");}
-#line 1843 "toy.tab.c"
+#line 1844 "toy.tab.c"
     break;
 
   case 56:
-#line 181 "toy.y"
+#line 183 "toy.y"
                                 {printf("[reduce 55] \n");}
-#line 1849 "toy.tab.c"
+#line 1850 "toy.tab.c"
     break;
 
   case 57:
-#line 185 "toy.y"
+#line 187 "toy.y"
                                                                         {printf("[reduce 56] \n");}
-#line 1855 "toy.tab.c"
+#line 1856 "toy.tab.c"
     break;
 
   case 58:
-#line 189 "toy.y"
+#line 191 "toy.y"
                                                                                                         {printf("[reduce 57] \n");}
-#line 1861 "toy.tab.c"
+#line 1862 "toy.tab.c"
     break;
 
   case 59:
-#line 193 "toy.y"
+#line 195 "toy.y"
                                                   {printf("[reduce 58] \n");}
-#line 1867 "toy.tab.c"
+#line 1868 "toy.tab.c"
     break;
 
   case 60:
-#line 197 "toy.y"
+#line 199 "toy.y"
                                                          {printf("[reduce 59] \n");}
-#line 1873 "toy.tab.c"
+#line 1874 "toy.tab.c"
     break;
 
   case 61:
-#line 201 "toy.y"
+#line 203 "toy.y"
                                                                                   {printf("[reduce 60] \n");}
-#line 1879 "toy.tab.c"
+#line 1880 "toy.tab.c"
     break;
 
   case 62:
-#line 203 "toy.y"
+#line 205 "toy.y"
                                                    {printf("[reduce 61] \n");}
-#line 1885 "toy.tab.c"
+#line 1886 "toy.tab.c"
     break;
 
   case 63:
-#line 204 "toy.y"
+#line 206 "toy.y"
                                      {printf("[reduce 62] \n");}
-#line 1891 "toy.tab.c"
+#line 1892 "toy.tab.c"
     break;
 
   case 64:
-#line 208 "toy.y"
+#line 210 "toy.y"
                                                       {printf("[reduce 63] \n");}
-#line 1897 "toy.tab.c"
+#line 1898 "toy.tab.c"
     break;
 
   case 65:
-#line 209 "toy.y"
+#line 211 "toy.y"
                                          {printf("[reduce 64] \n");}
-#line 1903 "toy.tab.c"
+#line 1904 "toy.tab.c"
     break;
 
   case 66:
-#line 210 "toy.y"
+#line 212 "toy.y"
                                        {printf("[reduce 65] \n");}
-#line 1909 "toy.tab.c"
+#line 1910 "toy.tab.c"
     break;
 
   case 67:
-#line 211 "toy.y"
+#line 213 "toy.y"
                                       {printf("[reduce 66] \n");}
-#line 1915 "toy.tab.c"
+#line 1916 "toy.tab.c"
     break;
 
   case 68:
-#line 212 "toy.y"
+#line 214 "toy.y"
                                      {printf("[reduce 67] \n");}
-#line 1921 "toy.tab.c"
+#line 1922 "toy.tab.c"
     break;
 
   case 69:
-#line 213 "toy.y"
+#line 215 "toy.y"
                                                             {printf("[reduce 68] \n");}
-#line 1927 "toy.tab.c"
+#line 1928 "toy.tab.c"
     break;
 
   case 70:
-#line 214 "toy.y"
+#line 216 "toy.y"
                                                 {printf("[reduce 69] \n");}
-#line 1933 "toy.tab.c"
+#line 1934 "toy.tab.c"
     break;
 
   case 71:
-#line 215 "toy.y"
+#line 217 "toy.y"
                                                  {printf("[reduce 70] \n");}
-#line 1939 "toy.tab.c"
+#line 1940 "toy.tab.c"
     break;
 
   case 72:
-#line 216 "toy.y"
+#line 218 "toy.y"
                                                           {printf("[reduce 71] \n");}
-#line 1945 "toy.tab.c"
+#line 1946 "toy.tab.c"
     break;
 
   case 73:
-#line 217 "toy.y"
+#line 219 "toy.y"
                                                     {printf("[reduce 72] \n");}
-#line 1951 "toy.tab.c"
+#line 1952 "toy.tab.c"
     break;
 
   case 74:
-#line 218 "toy.y"
+#line 220 "toy.y"
                                                {printf("[reduce 73] \n");}
-#line 1957 "toy.tab.c"
+#line 1958 "toy.tab.c"
     break;
 
   case 75:
-#line 219 "toy.y"
+#line 221 "toy.y"
                                             {printf("[reduce 74] \n");}
-#line 1963 "toy.tab.c"
+#line 1964 "toy.tab.c"
     break;
 
   case 76:
-#line 220 "toy.y"
+#line 222 "toy.y"
                                                 {printf("[reduce 75] \n");}
-#line 1969 "toy.tab.c"
+#line 1970 "toy.tab.c"
     break;
 
   case 77:
-#line 221 "toy.y"
+#line 223 "toy.y"
                                                      {printf("[reduce 76] \n");}
-#line 1975 "toy.tab.c"
+#line 1976 "toy.tab.c"
     break;
 
   case 78:
-#line 222 "toy.y"
+#line 224 "toy.y"
                                                    {printf("[reduce 77] \n");}
-#line 1981 "toy.tab.c"
+#line 1982 "toy.tab.c"
     break;
 
   case 79:
-#line 223 "toy.y"
+#line 225 "toy.y"
                                                         {printf("[reduce 78] \n");}
-#line 1987 "toy.tab.c"
+#line 1988 "toy.tab.c"
     break;
 
   case 80:
-#line 224 "toy.y"
+#line 226 "toy.y"
                                                  {printf("[reduce 79] \n");}
-#line 1993 "toy.tab.c"
+#line 1994 "toy.tab.c"
     break;
 
   case 81:
-#line 225 "toy.y"
+#line 227 "toy.y"
                                                     {printf("[reduce 80] \n");}
-#line 1999 "toy.tab.c"
+#line 2000 "toy.tab.c"
     break;
 
   case 82:
-#line 226 "toy.y"
+#line 228 "toy.y"
                                                {printf("[reduce 81] \n");}
-#line 2005 "toy.tab.c"
+#line 2006 "toy.tab.c"
     break;
 
   case 83:
-#line 227 "toy.y"
+#line 229 "toy.y"
                                               {printf("[reduce 82] \n");}
-#line 2011 "toy.tab.c"
+#line 2012 "toy.tab.c"
     break;
 
   case 84:
-#line 228 "toy.y"
+#line 230 "toy.y"
                                           {printf("[reduce 83] \n");}
-#line 2017 "toy.tab.c"
+#line 2018 "toy.tab.c"
     break;
 
   case 85:
-#line 229 "toy.y"
+#line 231 "toy.y"
                                                                {printf("[reduce 84] \n");}
-#line 2023 "toy.tab.c"
+#line 2024 "toy.tab.c"
     break;
 
   case 86:
-#line 230 "toy.y"
+#line 232 "toy.y"
                                                                                           {printf("[reduce 85] \n");}
-#line 2029 "toy.tab.c"
+#line 2030 "toy.tab.c"
     break;
 
   case 87:
-#line 234 "toy.y"
+#line 236 "toy.y"
                                     {printf("[reduce 86] \n");}
-#line 2035 "toy.tab.c"
+#line 2036 "toy.tab.c"
     break;
 
   case 88:
-#line 235 "toy.y"
+#line 237 "toy.y"
                                                                        {printf("[reduce 87] \n");}
-#line 2041 "toy.tab.c"
+#line 2042 "toy.tab.c"
     break;
 
   case 89:
-#line 236 "toy.y"
+#line 238 "toy.y"
                                                    {printf("[reduce 88] \n");}
-#line 2047 "toy.tab.c"
+#line 2048 "toy.tab.c"
     break;
 
   case 90:
-#line 240 "toy.y"
+#line 242 "toy.y"
                                                                    {printf("[reduce 89] \n");}
-#line 2053 "toy.tab.c"
+#line 2054 "toy.tab.c"
     break;
 
   case 91:
-#line 241 "toy.y"
+#line 243 "toy.y"
                                                                                {printf("[reduce 90] \n");}
-#line 2059 "toy.tab.c"
+#line 2060 "toy.tab.c"
     break;
 
   case 92:
-#line 245 "toy.y"
+#line 247 "toy.y"
                                        {printf("[reduce 91] \n");}
-#line 2065 "toy.tab.c"
+#line 2066 "toy.tab.c"
     break;
 
   case 93:
-#line 246 "toy.y"
+#line 248 "toy.y"
                                 {printf("[reduce 92] \n");}
-#line 2071 "toy.tab.c"
+#line 2072 "toy.tab.c"
     break;
 
   case 94:
-#line 250 "toy.y"
+#line 252 "toy.y"
                                              {printf("[reduce 93] \n");}
-#line 2077 "toy.tab.c"
+#line 2078 "toy.tab.c"
     break;
 
   case 95:
-#line 251 "toy.y"
+#line 253 "toy.y"
                                                 {printf("[reduce 94] \n");}
-#line 2083 "toy.tab.c"
+#line 2084 "toy.tab.c"
     break;
 
   case 96:
-#line 252 "toy.y"
+#line 254 "toy.y"
                                                 {printf("[reduce 95] \n");}
-#line 2089 "toy.tab.c"
+#line 2090 "toy.tab.c"
     break;
 
   case 97:
-#line 253 "toy.y"
+#line 255 "toy.y"
                                                  {printf("[reduce 96] \n");}
-#line 2095 "toy.tab.c"
+#line 2096 "toy.tab.c"
     break;
 
   case 98:
-#line 254 "toy.y"
+#line 256 "toy.y"
                                       {printf("[reduce 97] \n");}
-#line 2101 "toy.tab.c"
+#line 2102 "toy.tab.c"
     break;
 
 
-#line 2105 "toy.tab.c"
+#line 2106 "toy.tab.c"
 
       default: break;
     }
@@ -2333,7 +2334,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 256 "toy.y"
+#line 258 "toy.y"
 
 
 void yyerror(char *s) {
@@ -2341,7 +2342,9 @@ void yyerror(char *s) {
 }
 
 int main(){
-
-    yyparse();
+    int ntoken = yyparse();
+    while(ntoken) {
+        ntoken = yyparse();
+    }
     return 0;
 }

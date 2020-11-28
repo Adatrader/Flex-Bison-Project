@@ -2,7 +2,8 @@
  
 #include <stdio.h>
 //#include "lex.yy.c"
-//void yyerror(char *s)  
+void yyerror(char *s); 
+extern int yylex(); 
 
 %}
 
@@ -69,6 +70,7 @@
 %token _stringconstant
 %token _booleanconstant
 %token _id
+%token _unaryminus
 
 
 %%
