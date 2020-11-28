@@ -122,12 +122,38 @@ PROTOTYPE: TYPE _id _leftparen FORMALS _rightparen _semicolon {printf("[reduce 3
 ;
 
 
+// rule 12 - 
+STMT: ZOM_EXPR _semicolon {printf("[reduce 43]");}
+	| IFSTMT {printf("[reduce 44]");}
+	| WHILESTMT {printf("[reduce 45]");}
+	| FORSTMT {printf("[reduce 46]");}
+	| BREAKSTMT {printf("[reduce 47]");}
+	| RETURNSTMT {printf("[reduce 48]");}
+	| PRINTSTMT {printf("[reduce 49]");}
+;
+
+
+// rule 14 
+IFSTMT: M_IFSTMT {printf("[reduce 53]");}
+	| UM_IFSTMT {printf("[reduce 54]");}
+;
+
+
+// rule 15 
+WHILESTMT: _while _leftparen EXPR _rightparen STMT {printf("[reduce 57]");}
+;
+
+
+// rule 16
+FORSTMT: _for _leftparen ZOM_EXPR _semicolon EXPR _semicolon ZOM_EXPR _rightparen STMT {printf("[reduce 58]");}
+;
+
 // rule 17 - uc
 BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
 ;
 
 
-// rule 18 - 
+// rule 18 - c1
 RETURNSTMT: _return ZOM_EXPR _semicolon {printf("[reduce 60]");}
 ;
 
@@ -203,6 +229,12 @@ MORE_EXPR: EXPR _comma MORE_EXPR {printf("[reduce 62]");}
 
 ZOM_EXPR: EXPR {printf("[reduce 51]");}
 	| EPSILON {printf("[reduce 52]");}
+;
+
+UM_IFSTMT: _if _leftparen EXPR _rightbrace STMT {printf("[reduce 55]");}
+;
+
+M_IFSTMT: _if _leftparen EXPR _rightparen M_IFSTMT _else M_IFSTMT {printf("[reduce 56]");}
 ;
 
 %%
