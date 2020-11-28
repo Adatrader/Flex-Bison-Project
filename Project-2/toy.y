@@ -127,6 +127,13 @@ BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
 ;
 
 
+// rule 21 - c1
+LVALUE: _id {printf("[reduce 86]");}
+ 	| LVALUE _leftbracket EXPR _rightbracket {printf("[reduce 96]");}
+ 	| LVALUE _leftparen EXPR _rightparen {printf("[reduce 88]");}
+;
+
+
 // rule 24 - uc
 CONSTANT: _intconstant {printf("[reduce 93]");}
 	| _doubleconstant {printf("[reduce 93]");}
