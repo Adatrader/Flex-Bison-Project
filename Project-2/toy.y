@@ -92,6 +92,19 @@ extern int yydebug;
 '*' = M 
 */
 
+// rule 1 - c1
+PROGRAM: DECL {printf("[reduce 1]"); printf("[accept]\n");}
+	| DECL PROGRAM {printf("[reduce 2]");}
+;
+
+// rule 2 - c4
+DECL: VARIABLEDECL {printf("[reduce 3]");}
+	| FUNCTIONDECL {printf("[reduce 4]");}
+	| CLASSDECL {printf("[reduce 5]");}
+	| INTERFACEDECL {printf("[reduce 6]");}
+;
+
+
 // rule 3 - c1
 VARIABLEDECL: VARIABLE _semicolon {printf("[reduce 8] \n");};
 
@@ -110,7 +123,7 @@ TYPE: _int {printf("[reduce 9]");}
  ;
 
 
-// rule 6 - c2
+// rule 6 - c3
 FUNCTIONDECL: TYPE _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 15]");}
     | _void _id _leftparen FORMALS _rightparen STMTBLOCK {printf("[reduce 16]");}
 ;
@@ -131,7 +144,7 @@ FIELD: VARIABLEDECL {printf("[reduce 31]");}
 ;
 
 
-// rule 10 -
+// rule 10 - c1
 INTERFACEDECL: _interface _id _leftbrace ZOM_PROTOTYPE _rightbrace {printf("[reduce 33]");}
 ;
 
@@ -141,7 +154,7 @@ PROTOTYPE: TYPE _id _leftparen FORMALS _rightparen _semicolon {printf("[reduce 3
 ;
 
 
-// rule 12 - 
+// rule 12 - c2
 STMTBLOCK: _leftbrace ZOM_VARIABLEDECL ZOM_STMT _rightbrace {printf("[reduce 38]");}
 ;
 
@@ -158,20 +171,21 @@ STMT: ZOM_EXPR _semicolon {printf("[reduce 43]");}
 ;
 
 
-// rule 14 
+// rule 14 - c2
 IFSTMT: M_IFSTMT {printf("[reduce 53]");}
 	| UM_IFSTMT {printf("[reduce 54]");}
 ;
 
 
-// rule 15 
+// rule 15  -c2
 WHILESTMT: _while _leftparen EXPR _rightparen STMT {printf("[reduce 57]");}
 ;
 
 
-// rule 16
+// rule 16 -c2
 FORSTMT: _for _leftparen ZOM_EXPR _semicolon EXPR _semicolon ZOM_EXPR _rightparen STMT {printf("[reduce 58]");}
 ;
+
 
 // rule 17 - uc
 BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
@@ -182,9 +196,11 @@ BREAKSTMT: _break _semicolon {printf("[reduce 58]");}
 RETURNSTMT: _return ZOM_EXPR _semicolon {printf("[reduce 60]");}
 ;
 
-// rule 19 - 
+
+// rule 19 - c1
 PRINTSTMT: _println _leftparen MORE_EXPR _rightparen _semicolon {printf("[reduce 61]");}
 ;
+
 
 // rule 20 - c3
 EXPR: LVALUE _assignop EXPR {printf("[reduce 64]");}
@@ -220,7 +236,7 @@ LVALUE: _id {printf("[reduce 86]");}
 ;
 
 
-// rule 22
+// rule 22 - c1
 CALL: _id _leftparen ACTUALS _rightparen {printf("[reduce 89]");}
 	| _id _period _id _leftparen ACTUALS _rightparen {printf("[reduce 90]");}
 ;
