@@ -2,8 +2,10 @@
  
 #include <stdio.h>
 //#include "lex.yy.c"
-void yyerror(); 
+void yyerror(char *s); 
 extern int yylex(); 
+
+int ACCEPT_FLAG = 0;
 
 %}
 
@@ -83,7 +85,8 @@ extern int yylex();
 */
 
 START:
-				PROGRAM {printf("\n[accept]\n");};
+				PROGRAM {printf("\n[accept]\n"); ACCEPT_FLAG = 1;};
+
 // Production Rule 1
 PROGRAM:			DECLP {printf("[reduce 1]");};
 
@@ -262,12 +265,13 @@ CONSTANT:
 
 %%
 
-void yyerror() {
- printf("\n[reject]\n");
+void yyerror(char *s) {
+	// fprintf(stderr, "%s\n", s);
+	if (ACCEPT_FLAG == 0)
+ 		printf("\n[reject]\n");
 }
 
 int main(){
-
     yyparse();
     return 0;
 }
