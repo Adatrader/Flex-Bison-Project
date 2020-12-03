@@ -1,0 +1,4 @@
+void log(sting type, sting msg) {
+    println(type);
+    println(msg);
+}

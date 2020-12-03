@@ -1,0 +1,11 @@
+class Vehicle {
+    int wheel;
+    string brand;
+}
+
+class Car extends Vehicle {
+
+}
+
+
+
