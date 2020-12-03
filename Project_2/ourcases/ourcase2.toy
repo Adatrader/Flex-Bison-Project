@@ -1,0 +1,7 @@
+int getMod(int x, int y) {
+    return x%y;
+}
+
+int getProduct(int x, int y) {
+    return x*y;
+}
