@@ -8,5 +8,5 @@ rm -f toy.output
 flex toy.l
 bison -vd toy.y &>/dev/null
 cc lex.yy.c toy.tab.c -lfl
-./a.out < testcases/testcase14.toy > testcases/outputs/testcase14output.txt
-./a.out < testcases/testcase14.toy
+./a.out < ourcases/ourcase5.toy > ourcases/outputs/ourcase5output.txt
+./a.out < ourcases/ourcase5.toy

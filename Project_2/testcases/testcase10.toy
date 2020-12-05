@@ -1,5 +1,6 @@
-// in class
+class ten
+{
 boolean b;
 userDefinedClassType f() {}
 double d;
-string g(){}
+string g(){}}

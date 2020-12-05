@@ -1,2 +1,0 @@
-design your own test cases including at least 5 other syntax rules not
-covered in the above

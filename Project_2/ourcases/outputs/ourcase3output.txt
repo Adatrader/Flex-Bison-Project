@@ -1,0 +1,47 @@
+
+int [shift][reduce 13]
+id [shift]
+leftparen [shift]
+int [shift][reduce 13]
+id [shift][reduce 11]
+rightparen [shift][reduce 25][reduce 24][reduce 21]
+leftbrace [shift]
+
+if [shift][reduce 44]
+leftparen [shift]
+id [shift]
+greaterequal [shift][reduce 92][reduce 71]
+intconstant [shift][reduce 99][reduce 70]
+rightparen [shift][reduce 84]
+leftbrace [shift]
+
+return [shift][reduce 44]
+intconstant [shift][reduce 99][reduce 70]
+semicolon [shift][reduce 55][reduce 65][reduce 52]
+
+rightbrace [shift][reduce 46][reduce 45][reduce 42][reduce 54]
+else [shift]
+if [shift]
+leftparen [shift]
+id [shift]
+greater [shift][reduce 92][reduce 71]
+intconstant [shift][reduce 99][reduce 70]
+rightparen [shift][reduce 83]
+leftbrace [shift]
+
+return [shift][reduce 44]
+intconstant [shift][reduce 99][reduce 70]
+semicolon [shift][reduce 55][reduce 65][reduce 52]
+
+rightbrace [shift][reduce 46][reduce 45][reduce 42][reduce 54]
+else [shift]
+leftbrace [shift]
+
+return [shift][reduce 44]
+intconstant [shift][reduce 99][reduce 70]
+semicolon [shift][reduce 55][reduce 65][reduce 52]
+
+rightbrace [shift][reduce 46][reduce 45][reduce 42][reduce 54][reduce 58][reduce 57][reduce 48][reduce 58][reduce 57][reduce 48]
+
+rightbrace [shift][reduce 46][reduce 45][reduce 42][reduce 19][reduce 5][reduce 3][reduce 1]
+[accept]

@@ -1,11 +1,9 @@
 
-void [shift]
+int [shift][reduce 13]
 id [shift]
 leftparen [shift]
 rightparen [shift][reduce 22]
 leftbrace [shift]
 
-id [shift]
-assignop [shift]
-intconstant [shift]
+class [shift][reduce 44][reduce 46]
 [reject]

@@ -84,3 +84,36 @@ echo =========== Test Case 14 ===========
 echo
 echo ===================================
 echo
+echo ===================================
+echo
+cd ../runOurcases
+chmod +x runOurcase1.sh
+echo =========== Our Test Case 1 ===========
+./runOurcase1.sh
+echo
+echo ===================================
+echo
+chmod +x runOurcase2.sh
+echo =========== Our Test Case 2 ===========
+./runOurcase2.sh
+echo
+echo ===================================
+echo
+chmod +x runOurcase3.sh
+echo =========== Our Test Case 3 ===========
+./runOurcase3.sh
+echo
+echo ===================================
+echo
+chmod +x runOurcase4.sh
+echo =========== Our Test Case 4 ===========
+./runOurcase4.sh
+echo
+echo ===================================
+echo
+chmod +x runOurcase5.sh
+echo =========== Our Test Case 5 ===========
+./runOurcase5.sh
+echo
+echo ===================================
+echo

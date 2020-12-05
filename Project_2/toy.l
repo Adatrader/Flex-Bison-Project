@@ -102,9 +102,8 @@ while       { printf("\n%s [shift]", yytext); return (_while); }
 
 /* C Functions */
 
-//yywrap wraps the rules defined
-int yywrap(void) {
-    return 1;
-}
-
-
+// //yywrap wraps the rules defined
+// int yywrap(void) {
+//     printf("!!!! \n");
+//     return 1;
+// }

@@ -1,0 +1,5 @@
+
+id [shift]
+leftbracket [shift][reduce 18]
+intconstant [shift]
+[reject]
