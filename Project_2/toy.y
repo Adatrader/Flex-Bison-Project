@@ -5,6 +5,7 @@ void yyerror(char *s);
 extern int yylex();
 int ACCEPT_FLAG = 0;
 
+
 %}
 
 // left, right, nonassoc yacc keywords for operator precedence (highest to lowest)
