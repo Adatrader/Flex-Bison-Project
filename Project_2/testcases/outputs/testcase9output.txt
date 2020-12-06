@@ -1,0 +1,26 @@
+
+void [shift]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 22]
+leftbrace [shift]
+
+if [shift][reduce 44]
+leftparen [shift]
+id [shift]
+greater [shift][reduce 92][reduce 71]
+id [shift]
+rightparen [shift][reduce 92][reduce 71][reduce 83]
+id [shift]
+assignop [shift][reduce 92]
+id [shift]
+semicolon [shift][reduce 92][reduce 71][reduce 69][reduce 55][reduce 47]
+
+else [shift]
+id [shift]
+assignop [shift][reduce 92]
+id [shift]
+semicolon [shift][reduce 92][reduce 71][reduce 69][reduce 55][reduce 47][reduce 58][reduce 57][reduce 48]
+
+double [shift][reduce 46][reduce 45]
+[reject]

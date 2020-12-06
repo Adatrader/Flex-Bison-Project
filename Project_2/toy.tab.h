@@ -99,7 +99,8 @@ extern int yydebug;
     _doubleconstant = 305,
     _stringconstant = 306,
     _booleanconstant = 307,
-    _id = 308
+    _id = 308,
+    _exponent = 309
   };
 #endif
 

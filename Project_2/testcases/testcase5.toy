@@ -1,2 +1,2 @@
-// in function
-front = in.nextLine;
+void caseFive(){
+front = in.nextLine;}

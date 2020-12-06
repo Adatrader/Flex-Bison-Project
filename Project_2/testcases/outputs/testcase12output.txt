@@ -1,0 +1,17 @@
+
+class [shift]
+id [shift]
+leftbrace [shift][reduce 30]
+
+int [shift][reduce 13]
+id [shift]
+semicolon [shift][reduce 11][reduce 8][reduce 35]
+
+double [shift][reduce 14]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 22]
+leftbrace [shift]
+this [shift][reduce 44][reduce 72]
+period [shift][reduce 55]
+[reject]

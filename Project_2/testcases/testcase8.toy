@@ -1,2 +1,3 @@
-// in function
+void caseEight(){
 for ( ; ; ) x = 1;
+}
