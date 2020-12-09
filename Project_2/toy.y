@@ -237,6 +237,7 @@ EXPR:
 			|	EXPR _division EXPR {printf("[reduce 82]");}
 			|	EXPR _mod EXPR {printf("[reduce 83]");}
 			|	_minus EXPR {printf("[reduce 84]");} // Unary
+			|	EXPR _less EXPR	{printf("[reduce 85]");}
 			|	EXPR _lessequal EXPR {printf("[reduce 86]");}
 			|	EXPR _greater EXPR {printf("[reduce 87]");}
 			|	EXPR _greaterequal EXPR {printf("[reduce 88]");}
