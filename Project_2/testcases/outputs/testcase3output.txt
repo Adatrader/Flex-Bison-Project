@@ -2,10 +2,11 @@
 void [shift]
 id [shift]
 leftparen [shift]
-rightparen [shift][reduce 22]
+rightparen [shift][reduce 23]
 leftbrace [shift]
 
 id [shift]
 assignop [shift]
-intconstant [shift]
+intconstant [shift][reduce 103][reduce 74]
+period [shift][reduce 12]
 [reject]
