@@ -564,21 +564,16 @@ char *yytext;
 /* C Headers, Declarations, Vars */
 #include <stdio.h>
 #include <stdbool.h>
-#include "toy_scanner.h"
+#include "toy.tab.h"
 
-int getNextSymbol(char*, int);
-int findFirstEmpty(char*);
-int createOrSearch(char*, int*, char*, int*);
-int printSwitch(int*, char*);
-int printSNTable(char*, int*);
-#line 575 "lex.yy.c"
+#line 570 "lex.yy.c"
 /* String (#6) */
 /* Identifiers (#2) */
 /* Whitespaces (#3)*/
 /* Integer and Double (#4 & #5), Exponent and Hex*/
-#line 35 "toy.l"
+#line 30 "toy.l"
  /* Comments (#9)*/
-#line 582 "lex.yy.c"
+#line 577 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -795,12 +790,12 @@ YY_DECL
 		}
 
 	{
-#line 39 "toy.l"
+#line 34 "toy.l"
 
 
   /* Keywords (#1)*/
 
-#line 804 "lex.yy.c"
+#line 799 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -859,290 +854,290 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 43 "toy.l"
-{ printf("%s [shift]", yytext); return(_boolean); }
+#line 38 "toy.l"
+{ printf("\n%s [shift]", yytext); return(_boolean); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 44 "toy.l"
-{ printf("%s [shift]", yytext); return(_break); }
+#line 39 "toy.l"
+{ printf("\n%s [shift]", yytext); return(_break); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 45 "toy.l"
-{ printf("%s [shift]", yytext); return (_class); }
+#line 40 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_class); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 46 "toy.l"
-{ printf("%s [shift]", yytext); return (_double); }
+#line 41 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_double); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 47 "toy.l"
-{ printf("%s [shift]", yytext); return (_else); }
+#line 42 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_else); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 48 "toy.l"
-{ printf("%s [shift]", yytext); return (_extends); }
+#line 43 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_extends); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 49 "toy.l"
-{ printf("%s [shift]", yytext); return (_booleanconstant); }
+#line 44 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_booleanconstant); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 50 "toy.l"
-{ printf("%s [shift]", yytext); return (_for); }
+#line 45 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_for); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 51 "toy.l"
-{ printf("%s [shift]", yytext); return (_if); }
+#line 46 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_if); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 52 "toy.l"
-{ printf("%s [shift]", yytext); return (_implements); }
+#line 47 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_implements); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 53 "toy.l"
-{ printf("%s [shift]", yytext); return (_int); }
+#line 48 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_int); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 54 "toy.l"
-{ printf("%s [shift]", yytext); return (_interface); }
+#line 49 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_interface); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 55 "toy.l"
-{ printf("%s [shift]", yytext); return (_new); }
+#line 50 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_new); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 56 "toy.l"
-{ printf("%s [shift]", yytext); return (_newarray); }
+#line 51 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_newarray); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 57 "toy.l"
-{ printf("%s [shift]", yytext); return (_null); }
+#line 52 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_null); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 58 "toy.l"
-{ printf("%s [shift]", yytext); return (_println); }
+#line 53 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_println); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 59 "toy.l"
-{ printf("%s [shift]", yytext); return (_readln); }
+#line 54 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_readln); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 60 "toy.l"
-{ printf("%s [shift]", yytext); return (_return); }
+#line 55 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_return); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 61 "toy.l"
-{ printf("%s [shift]", yytext); return (_string); }
+#line 56 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_string); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 62 "toy.l"
-{ printf("%s [shift]", yytext); return (_this); }
+#line 57 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_this); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 63 "toy.l"
-{ printf("%s [shift]", yytext); return (_booleanconstant); }
+#line 58 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_booleanconstant); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 64 "toy.l"
-{ printf("%s [shift]", yytext); return (_void); }
+#line 59 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_void); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 65 "toy.l"
-{ printf("%s [shift]", yytext); return (_while); }
+#line 60 "toy.l"
+{ printf("\n%s [shift]", yytext); return (_while); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 67 "toy.l"
-{ printf("intconstant [shift]"); return(_intconstant); }
+#line 62 "toy.l"
+{ printf("\nintconstant [shift]"); return(_intconstant); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 68 "toy.l"
-{ printf("doubleconstant [shift]"); return(_doubleconstant); }
+#line 63 "toy.l"
+{ printf("\ndoubleconstant [shift]"); return(_doubleconstant); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 69 "toy.l"
-{ printf("stringconstant [shift]"); return(_stringconstant); }
+#line 64 "toy.l"
+{ printf("\nstringconstant [shift]"); return(_stringconstant); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 70 "toy.l"
-{ printf("id [shift]"); return(_id); }
+#line 65 "toy.l"
+{ printf("\nid [shift]"); return(_id); }
 	YY_BREAK
 /* Operators */
 case 28:
 YY_RULE_SETUP
-#line 74 "toy.l"
-{ printf("plus [shift]"); return(_plus); }
+#line 69 "toy.l"
+{ printf("\nplus [shift]"); return(_plus); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 75 "toy.l"
-{ printf("minus [shift]"); return(_minus); }
+#line 70 "toy.l"
+{ printf("\nminus [shift]"); return(_minus); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 76 "toy.l"
-{ printf("multiplication [shift]"); return(_multiplication); }
+#line 71 "toy.l"
+{ printf("\nmultiplication [shift]"); return(_multiplication); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 77 "toy.l"
-{ printf("division [shift]"); return(_division); }
+#line 72 "toy.l"
+{ printf("\ndivision [shift]"); return(_division); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 78 "toy.l"
-{ printf("mod [shift]"); return(_mod); }
+#line 73 "toy.l"
+{ printf("\nmod [shift]"); return(_mod); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 79 "toy.l"
-{ printf("less [shift]"); return(_less); }
+#line 74 "toy.l"
+{ printf("\nless [shift]"); return(_less); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 80 "toy.l"
-{ printf("lessequal [shift]"); return(_lessequal); }
+#line 75 "toy.l"
+{ printf("\nlessequal [shift]"); return(_lessequal); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 81 "toy.l"
-{ printf("greater [shift]"); return(_greater); }
+#line 76 "toy.l"
+{ printf("\ngreater [shift]"); return(_greater); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 82 "toy.l"
-{ printf("greaterequal [shift]"); return(_greaterequal); }
+#line 77 "toy.l"
+{ printf("\ngreaterequal [shift]"); return(_greaterequal); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 83 "toy.l"
-{ printf("equal [shift]"); return(_equal); }
+#line 78 "toy.l"
+{ printf("\nequal [shift]"); return(_equal); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 84 "toy.l"
-{ printf("notequal [shift]"); return(_notequal); }
+#line 79 "toy.l"
+{ printf("\nnotequal [shift]"); return(_notequal); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 85 "toy.l"
-{ printf("and [shift]"); return(_and); }
+#line 80 "toy.l"
+{ printf("\nand [shift]"); return(_and); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 86 "toy.l"
-{ printf("or [shift]"); return(_or); }
+#line 81 "toy.l"
+{ printf("\nor [shift]"); return(_or); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 87 "toy.l"
-{ printf("not [shift]"); return(_not); }
+#line 82 "toy.l"
+{ printf("\nnot [shift]"); return(_not); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 88 "toy.l"
-{ printf("assignop [shift]"); return(_assignop); }
+#line 83 "toy.l"
+{ printf("\nassignop [shift]"); return(_assignop); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 89 "toy.l"
-{ printf("semicolon [shift]"); return(_semicolon); }
+#line 84 "toy.l"
+{ printf("\nsemicolon [shift]"); return(_semicolon); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 90 "toy.l"
-{ printf("comma [shift]"); return(_comma); }
+#line 85 "toy.l"
+{ printf("\ncomma [shift]"); return(_comma); }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 91 "toy.l"
-{ printf("period [shift]"); return(_period); }
+#line 86 "toy.l"
+{ printf("\nperiod [shift]"); return(_period); }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 92 "toy.l"
-{ printf("leftparen [shift]"); return(_leftparen); }
+#line 87 "toy.l"
+{ printf("\nleftparen [shift]"); return(_leftparen); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 93 "toy.l"
-{ printf("rightparen [shift]"); return(_rightparen); }
+#line 88 "toy.l"
+{ printf("\nrightparen [shift]"); return(_rightparen); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 94 "toy.l"
-{ printf("leftbracket [shift]"); return(_leftbracket); }
+#line 89 "toy.l"
+{ printf("\nleftbracket [shift]"); return(_leftbracket); }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 95 "toy.l"
-{ printf("rightbracket [shift]"); return(_rightbracket); }
+#line 90 "toy.l"
+{ printf("\nrightbracket [shift]"); return(_rightbracket); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 96 "toy.l"
-{ printf("leftbrace [shift]"); return(_leftbrace); }
+#line 91 "toy.l"
+{ printf("\nleftbrace [shift]"); return(_leftbrace); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 97 "toy.l"
-{ printf("rightbrace [shift]"); return(_rightbrace); }
+#line 92 "toy.l"
+{ printf("\nrightbrace [shift]"); return(_rightbrace); }
 	YY_BREAK
 /* Comments (#9) */
 case 52:
 YY_RULE_SETUP
-#line 100 "toy.l"
+#line 95 "toy.l"
 {;}
 	YY_BREAK
 case 53:
 /* rule 53 can match eol */
 YY_RULE_SETUP
-#line 101 "toy.l"
+#line 96 "toy.l"
 {;}
 	YY_BREAK
 case 54:
 /* rule 54 can match eol */
 YY_RULE_SETUP
-#line 102 "toy.l"
+#line 97 "toy.l"
 {;}
 	YY_BREAK
 /* Other */
 case 55:
 YY_RULE_SETUP
-#line 105 "toy.l"
+#line 100 "toy.l"
 {;}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 107 "toy.l"
+#line 102 "toy.l"
 ECHO;
 	YY_BREAK
-#line 1146 "lex.yy.c"
+#line 1141 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2147,226 +2142,15 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 107 "toy.l"
+#line 102 "toy.l"
 
 
 /* C Functions */
 
-
-/* Helper Methods */
-
-int getNextSymbol(char* string, int pos){
-  int char_val = string[pos];
-  if (char_val >= 97){
-    return char_val - 97 + 26;
-  }else{
-    return char_val - 65;
-  }
-}
-
-int findFirstEmpty(char* arr){
-  for(int i = 0; i < 4096; i++){
-    if (arr[i] == '*'){
-      return i;
-      break;
-    }
-  }
-}
-
-//createOrSearch returns 1 if input string is accepted by the search,
-//returns 0 if rejected, but then creates an entry in the trie structure
-
-int createOrSearch(char *s, int* switchArr, char* symbol, int* next){
-  int valueOfSymbol = getNextSymbol(s, 0);
-  int pointer = switchArr[valueOfSymbol];
-
-  //if pointer is undefined then Create()
-  //pointer is undefined if the switchArr is -1 (because of how its initialized)
-
-  if(pointer == -1){
-    //defines the current location in the array to go to by finding the first empty place
-    int positionOfArray = findFirstEmpty(symbol);
-    //printf("\npositionOfArray at %c: %d\n", s[0], findFirstEmpty(symbol));
-    switchArr[valueOfSymbol] = positionOfArray;
-    for(int i = 1; i < strlen(s); i++){
-      symbol[positionOfArray] = s[i];
-      positionOfArray++;
-    }
-    symbol[positionOfArray] = '@';
-    return false;
-  }
-  else {
-    //the position of the marker for getNextSymbol
-    int i = 1;
-    valueOfSymbol = getNextSymbol(s, i);
-    int exit = false;
-    while(!exit && i < strlen(s)){
-      if(symbol[pointer] == s[i]){
-        pointer++;
-        i++;
-      } else {
-        exit = true;
-      }
-    }
-
-    if(exit){
-      int nextTablePosition;
-      //similar to the outer if statement, checks if next is undefined
-      if(next[pointer] == -1){
-        nextTablePosition = findFirstEmpty(symbol);
-        next[pointer] = nextTablePosition;
-      } else {
-        nextTablePosition = next[pointer];
-      }
-
-      //printf("\nnextTablePosition at %c: %d\n", s[1], nextTablePosition);
-
-      while(i < strlen(s)){
-        symbol[nextTablePosition] = s[i];
-        nextTablePosition++;
-        i++;
-      }
-      symbol[nextTablePosition] = '@';
-    }
-
-    //printSNTable(symbol, next);
-
-    int accepted = !exit;
-    return accepted;
-  }
-}
-
-// Print symbol and next table
-int printSNTable(char* symbol, int* next){
-  int count = 0;
-  int printLoop = true;
-  for(int x = 0; x < 50; x++){
-    if(!printLoop){
-      break;
-    }
-
-    printf("\n\t");
-
-    //Header
-    for ( int i = 0+count; i < 20+count; i++ ){
-      if(symbol[i] == '*'){
-        printLoop = false;
-      }
-      printf("%*d",5,i);
-  	}
-
-    //Symbol
-  	printf( "\nsymbol:\t" );
-  	for ( int i = 0+count; i < 20+count; i++ ){
-      if(symbol[i] == '*'){
-        printLoop = false;
-      }
-      printf("%*c",5,symbol[i]);
-  	}
-
-    //Next
-  	printf( "\nnext:\t" );
-  	for ( int i = 0+count; i < 20+count; i++ ){
-      if(symbol[i] == '*'){
-        printLoop = false;
-      }
-  		if ( next[i] > 0 )
-  			printf("%*d",5,next[i]);
-  		else
-  			printf("%*c",5,' ');
-  	}
-  	  printf("\n");
-      count+=20;
-  }
-  return 0;
-}
-
-//Print switch table
-int printSwitch(int* switchArr, char* alphabet){
-  printf("\n\n\n\t");
-
-  //Header
-  for( int x = 0; x <= 19; x++ ){
-    printf("%*c", 5, alphabet[x]);
-  }
-  //Values
-  printf("\nswitch:\t");
-  for( int x = 0; x < 20; x++ ){
-    printf("%*d", 5, switchArr[x]);
-  }
-  //Header
-  printf("\n\n\t");
-  for( int x = 20; x <= 39; x++ ){
-    printf("%*c", 5, alphabet[x]);
-  }
-  //Values
-  printf("\nswitch:\t");
-  for( int x = 20; x < 40; x++ ){
-    printf("%*d", 5, switchArr[x]);
-  }
-
-  //Header
-  printf("\n\n\t");
-  for( int x = 40; x <= 51; x++ ){
-    printf("%*c", 5, alphabet[x]);
-  }
-  //Values
-  printf("\nswitch:\t");
-  for( int x = 40; x < 52; x++ ){
-    printf("%*d", 5, switchArr[x]);
-  }
-  printf("\n\n\n");
-
-  return 0;
-}
-
-/*
 //yywrap wraps the rules defined
 int yywrap(void) {
     return 1;
 }
 
-int main(void) {
-
-  //Trie data structure
-  int switchArr[52];
-  char symbol[4096];
-  int next[4096];
-
-  char alphabet[52] = {
-  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-  'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-  };
-
-  //Initializes arrays with placeholder values
-  for (int x = 0; x < 52; x++){
-    switchArr[x] = -1;
-  }
-  for (int x = 0; x < 4096; x++){
-    symbol[x] = '*';
-  }
-  for (int x = 0; x < 4096; x++){
-    next[x] = -1;
-  }
-
-  // yylex is the main flex function -scanner
-  int curr = yylex();
-  while(curr) {
-    char s[strlen(yytext)];
-		strcpy(s,yytext);
-		if (curr == _booleanconstant || curr == _id || curr <= _while){
-			createOrSearch(s, switchArr, symbol, next);
-		}
-		curr = yylex();
-
-  }
 
 
-  //Print switch
-  printSwitch(switchArr,alphabet);
-  printSNTable(symbol,next);
-  return 0;
-}
-*/

@@ -1,0 +1,8 @@
+
+int [shift][reduce 13]
+id [shift]
+assignop [shift][reduce 11]
+intconstant [shift][reduce 103]
+semicolon [shift][reduce 10][reduce 4]
+[reduce 3][reduce 1]
+[accept]

@@ -1,0 +1,14 @@
+
+void [shift]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 23]
+leftbrace [shift]
+
+id [shift]
+assignop [shift]
+id [shift]
+period [shift]
+id [shift]
+semicolon [shift]
+[reject]

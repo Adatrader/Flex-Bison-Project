@@ -1,0 +1,41 @@
+
+int [shift][reduce 13]
+id [shift]
+leftparen [shift]
+int [shift][reduce 13]
+id [shift][reduce 11]
+comma [shift]
+int [shift][reduce 13]
+id [shift][reduce 11]
+rightparen [shift][reduce 26][reduce 24][reduce 25][reduce 22]
+leftbrace [shift]
+
+return [shift][reduce 47]
+id [shift]
+mod [shift][reduce 96][reduce 75]
+id [shift]
+semicolon [shift][reduce 96][reduce 75][reduce 83][reduce 58][reduce 69][reduce 55]
+
+rightbrace [shift][reduce 49][reduce 48][reduce 47][reduce 44][reduce 20][reduce 5]
+
+
+int [shift][reduce 13]
+id [shift]
+leftparen [shift]
+int [shift][reduce 13]
+id [shift][reduce 11]
+comma [shift]
+int [shift][reduce 13]
+id [shift][reduce 11]
+rightparen [shift][reduce 26][reduce 24][reduce 25][reduce 22]
+leftbrace [shift]
+
+return [shift][reduce 47]
+id [shift]
+multiplication [shift][reduce 96][reduce 75]
+id [shift]
+semicolon [shift][reduce 96][reduce 75][reduce 81][reduce 58][reduce 69][reduce 55]
+
+boolean [shift][reduce 49][reduce 48][reduce 15]
+true [shift]
+[reject]

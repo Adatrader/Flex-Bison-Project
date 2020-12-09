@@ -1,0 +1,12 @@
+
+void [shift]
+id [shift]
+leftparen [shift]
+rightparen [shift][reduce 23]
+leftbrace [shift]
+
+for [shift][reduce 47]
+leftparen [shift]
+semicolon [shift][reduce 59]
+semicolon [shift]
+[reject]
