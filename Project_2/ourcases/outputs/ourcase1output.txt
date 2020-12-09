@@ -2,12 +2,12 @@
 int [shift][reduce 13]
 id [shift]
 leftparen [shift]
-rightparen [shift][reduce 22]
+rightparen [shift][reduce 23]
 leftbrace [shift]
 
-return [shift][reduce 44]
-intconstant [shift][reduce 99][reduce 70]
-semicolon [shift][reduce 55][reduce 65][reduce 52]
+return [shift][reduce 47]
+intconstant [shift][reduce 103][reduce 74]
+semicolon [shift][reduce 58][reduce 69][reduce 55]
 
-rightbrace [shift][reduce 46][reduce 45][reduce 42][reduce 19][reduce 5][reduce 3][reduce 1]
+rightbrace [shift][reduce 49][reduce 48][reduce 47][reduce 44][reduce 20][reduce 5][reduce 3][reduce 1]
 [accept]
