@@ -2,7 +2,7 @@
 void [shift]
 id [shift]
 leftparen [shift]
-rightparen [shift][reduce 23]
+rightparen [shift][reduce 22]
 leftbrace [shift]
 
 id [shift]

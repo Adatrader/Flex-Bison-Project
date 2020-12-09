@@ -1,27 +1,27 @@
 
 class [shift]
 id [shift]
-leftbrace [shift][reduce 31]
+leftbrace [shift][reduce 30]
 
 int [shift][reduce 13]
 id [shift]
-semicolon [shift][reduce 11][reduce 8][reduce 36]
+semicolon [shift][reduce 11][reduce 8][reduce 35]
 
 string [shift][reduce 16]
 id [shift]
-semicolon [shift][reduce 11][reduce 8][reduce 36]
+semicolon [shift][reduce 11][reduce 8][reduce 35]
 
-rightbrace [shift][reduce 35][reduce 34][reduce 34][reduce 27][reduce 6]
+rightbrace [shift][reduce 34][reduce 33][reduce 33][reduce 26][reduce 6]
 
 
 class [shift]
 id [shift]
 extends [shift]
 id [shift]
-leftbrace [shift][reduce 28]
+leftbrace [shift][reduce 27]
 
 
-rightbrace [shift][reduce 35][reduce 27][reduce 6]
+rightbrace [shift][reduce 34][reduce 26][reduce 6]
 
 
 
