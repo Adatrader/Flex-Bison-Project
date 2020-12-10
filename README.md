@@ -7,11 +7,17 @@ Nandan Vinjamury<br/>
 Ta Wei Chien
 
 ## Run Project One
+<br/>
+Through an Ubuntu Linux distro, you can run the Toy Compiler in the following steps:
+<br/><br/>
+Step 1 - Installing Flex and Bison:<br/>
+Open a terminal window and enter this command:<br/>
+$sudo apt-get install flex bison<br/>
+Step 2 - Running the Toy compiler program:</br>
+Open a terminal window in the project directory. <br/>
+Either enter the following commands manually, or save the following shell script into an sh file with the proper header and run them accordingly.<br/>
 
-sudo apt-get install flex bison<br/>
-Open terminal in project directory<br/>
-
-Shell script:<br/>
+Shell script for running the given sample:<br/>
 
 ```
 cd Project_1
@@ -19,7 +25,7 @@ chmod +x runSampleGiven.sh
 ./runSampleGiven.sh
 ```
 
-<br/> or <br/>
+<br/> or shell script for running a user input file:<br/>
 
 ```
 cd Project_1
